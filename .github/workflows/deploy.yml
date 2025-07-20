@@ -32,7 +32,7 @@ jobs:
           # DEBUGGING: Show what SERVER_HTML_FOLDER resolves to
           echo "=== SERVER_HTML_FOLDER DEBUG ==="
           ssh -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} "echo 'SERVER_HTML_FOLDER value: ${{ secrets.SERVER_HTML_FOLDER }}'"
-          ssh -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} "echo 'Absolute path: \$(readlink -f ${{ secrets.SERVER_HTML_FOLDER }})"
+          ssh -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} "readlink -f ${{ secrets.SERVER_HTML_FOLDER }}"
           
           # Create target directory
           ssh -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} "mkdir -p ${{ secrets.SERVER_HTML_FOLDER }}"
