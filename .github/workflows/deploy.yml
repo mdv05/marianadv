@@ -1,5 +1,4 @@
 name: Deploy to Linux
-
 on:
   push:
     branches: [ main ]
@@ -23,4 +22,12 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           echo "StrictHostKeyChecking no" >> ~/.ssh/config
+          
+          # Test connection
+          ssh -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} "echo 'SSH connection successful'"
+          
+          # Create target directory
+          ssh -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} "mkdir -p ${{ secrets.SERVER_HTML_FOLDER }}"
+          
+          # Deploy files
           rsync -avz -e "ssh -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no" --delete ./html/ ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }}:${{ secrets.SERVER_HTML_FOLDER }}
