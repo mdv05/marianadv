@@ -5,7 +5,6 @@ on:
     paths:
       - 'html/**'
   workflow_dispatch:
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -26,8 +25,30 @@ jobs:
           # Test connection
           ssh -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} "echo 'SSH connection successful'"
           
+          # DEBUGGING: Show environment info
+          echo "=== DEBUGGING SERVER ENVIRONMENT ==="
+          ssh -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} "whoami && pwd"
+          
+          # DEBUGGING: Show what SERVER_HTML_FOLDER resolves to
+          echo "=== SERVER_HTML_FOLDER DEBUG ==="
+          ssh -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} "echo 'SERVER_HTML_FOLDER value: ${{ secrets.SERVER_HTML_FOLDER }}'"
+          ssh -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} "echo 'Absolute path: \$(readlink -f ${{ secrets.SERVER_HTML_FOLDER }})"
+          
           # Create target directory
           ssh -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} "mkdir -p ${{ secrets.SERVER_HTML_FOLDER }}"
+          
+          # DEBUGGING: Check if directory was created and permissions
+          echo "=== DIRECTORY PERMISSIONS DEBUG ==="
+          ssh -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} "ls -la ${{ secrets.SERVER_HTML_FOLDER }}"
+          ssh -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} "ls -la \$(dirname ${{ secrets.SERVER_HTML_FOLDER }})"
+          
+          # DEBUGGING: Test write permission
+          echo "=== WRITE PERMISSION TEST ==="
+          ssh -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} "touch ${{ secrets.SERVER_HTML_FOLDER }}/test_file && echo 'Write test successful' && rm ${{ secrets.SERVER_HTML_FOLDER }}/test_file" || echo "Write test failed"
+          
+          # DEBUGGING: Show exact rsync target path
+          echo "=== RSYNC TARGET DEBUG ==="
+          echo "Rsync will attempt to sync to: ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }}:${{ secrets.SERVER_HTML_FOLDER }}"
           
           # Deploy files
           rsync -avz -e "ssh -p ${{ secrets.SERVER_PORT }} -o StrictHostKeyChecking=no" --delete ./html/ ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }}:${{ secrets.SERVER_HTML_FOLDER }}
