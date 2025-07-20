@@ -1,4 +1,4 @@
-name: Deploy to Rocky Linux
+name: Deploy to Linux
 
 on:
   push:
