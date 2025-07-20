@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariana Duong-Vázquez | Actuarial Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #764ba2;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #764ba2;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #764ba2;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23667eea" stop-opacity="0.1"/><stop offset="100%" stop-color="%23764ba2" stop-opacity="0.3"/></radialGradient></defs><circle cx="200" cy="200" r="150" fill="url(%23a)"/><circle cx="800" cy="300" r="200" fill="url(%23a)"/><circle cx="400" cy="700" r="180" fill="url(%23a)"/></svg>') no-repeat center/cover;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 4rem 3rem;
+            border-radius: 25px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeInUp 1s ease;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2, #ff6b6b);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b6b, #ffa726);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .stat-item {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        /* Education Section */
+        .education-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .university {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #764ba2;
+        }
+
+        .degree {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gpa {
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.75rem;
+            top: 2rem;
+            width: 15px;
+            height: 15px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .job-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #764ba2;
+            margin-bottom: 0.5rem;
+        }
+
+        .company {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-item {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            display: inline-block;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #764ba2;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .timeline {
+                padding-left: 1rem;
+            }
+
+            .timeline-item {
+                margin-left: 1rem;
+            }
+        }
+
+        /* Floating Action Button */
+        .fab {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(45deg, #ff6b6b, #ffa726);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .fab:hover {
+            transform: scale(1.1) rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">MD</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Mariana Duong-Vázquez</h1>
+            <p>Actuarial Science Student & Future Insurance Professional</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <section id="about" class="fade-in">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">3.66</div>
+                        <div>GPA</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2027</div>
+                        <div>Expected Graduation</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4+</div>
+                        <div>Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div>Leadership Roles</div>
+                    </div>
+                </div>
+                <div>
+                    <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+                        I'm a dedicated Mathematics/Actuarial Science student at the University of Connecticut with a passion for data analysis, risk assessment, and diversity & inclusion in the actuarial field. As an active leader in multiple organizations, I bring both analytical skills and cultural awareness to every project.
+                    </p>
+                    <p style="font-size: 1.1rem;">
+                        Currently preparing for my Exam 2/FM and gaining hands-on experience through internships, I'm committed to building a career that combines mathematical precision with meaningful impact on underrepresented communities in actuarial science.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="fade-in">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-card">
+                <div class="education-header">
+                    <div>
+                        <div class="university">University of Connecticut</div>
+                        <div class="degree">Bachelor of Art in Mathematics/Actuarial Science</div>
+                        <div style="color: #666;">Storrs, CT</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div class="gpa">GPA: 3.66</div>
+                        <div style="margin-top: 0.5rem; color: #666;">Expected May 2027</div>
+                    </div>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <strong>Study Abroad:</strong> University of Connecticut Field School, Greece (July 2024)
+                </div>
+            </div>
+            <div class="education-card">
+                <h3 style="color: #764ba2; margin-bottom: 1rem;">Actuarial Progress</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div>
+                        <strong>Upcoming:</strong> Exam 2/FM (August 2025)
+                    </div>
+                    <div>
+                        <strong>Completed:</strong> VEE coursework in Economics and Accounting
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="fade-in">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="job-title">Actuarial Intern</div>
+                    <div class="company">Segal | Farmington, CT | May 2025 – August 2025</div>
+                    <ul>
+                        <li>Gains hands-on experience in retirement consulting and provides support for actuarial valuation projects</li>
+                        <li>Collaborates with experienced actuaries on proofreading reports, government filings, and benefit calculations</li>
+                        <li>Participates in professional development programs and mentorship opportunities</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="job-title">Model</div>
+                    <div class="company">Tina Kiniry Management | Rocky Hill, CT | September 2021 – Present</div>
+                    <ul>
+                        <li>Collaborates strategically with photographers and agencies to ensure successful shoots</li>
+                        <li>Maintains professionalism by consistently meeting tight deadlines across multiple projects</li>
+                        <li>Balances professional commitments with academic excellence and leadership roles over 4 years</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="fade-in">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-item">Microsoft Excel</div>
+                    <div class="skill-item">VBA</div>
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">R</div>
+                    <div class="skill-item">PowerPoint</div>
+                </div>
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-item">English (Fluent)</div>
+                    <div class="skill-item">Spanish (Fluent)</div>
+                </div>
+                <div class="skill-category">
+                    <h3>Actuarial</h3>
+                    <div class="skill-item">Risk Assessment</div>
+                    <div class="skill-item">Data Analysis</div>
+                    <div class="skill-item">Financial Modeling</div>
+                    <div class="skill-item">VEE Economics</div>
+                    <div class="skill-item">VEE Accounting</div>
+                </div>
+                <div class="skill-category">
+                    <h3>Leadership</h3>
+                    <div class="skill-item">Project Management</div>
+                    <div class="skill-item">Event Planning</div>
+                    <div class="skill-item">Team Coordination</div>
+                    <div class="skill-item">Public Speaking</div>
+                    <div class="skill-item">Mentorship</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="fade-in">
+        <div class="container">
+            <h2 class="section-title">Featured Project</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Janet and Mark L. Goldenson Center Case Study Competition</h3>
+                        <div style="opacity: 0.9;">February 2024 – April 2024</div>
+                    </div>
+                    <div class="project-content">
+                        <p style="margin-bottom: 1rem;">
+                            Conducted comprehensive group research on lower-income market insurance needs and developed an innovative flexible insurance policy model resembling universal life insurance.
+                        </p>
+                        <p style="margin-bottom: 1rem;">
+                            <strong>Key Innovation:</strong> Designed an AI-driven mobile app that allows users to select desired coverage options and generates personalized insurance plans within their budget constraints.
+                        </p>
+                        <p>
+                            <strong>Impact:</strong> Presented solution to industry professionals and faculty, demonstrating potential for increased accessibility and reduced barriers to insurance coverage.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>mariana.duong-vazquez@uconn.edu</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <h3>Phone</h3>
+                    <p>860-807-5335</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🌐</div>
+                    <h3>LinkedIn</h3>
+                    <p>linkedin.com/in/mariana-duong-vázquez</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <h3>Location</h3>
+                    <p>Middletown, CT</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="fab" onclick="scrollToTop()">↑</div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Dynamic text animation for hero
+        const heroTitle = document.querySelector('.hero h1');
+        const text = heroTitle.textContent;
+        heroTitle.textContent = '';
+        
+        for (let i = 0; i < text.length; i++) {
+            setTimeout(() => {
+                heroTitle.textContent += text[i];
+            }, i * 100);
+        }
+
+        // Interactive skill items
+        document.querySelectorAll('.skill-item').forEach(skill => {
+            skill.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05) rotate(3deg)';
+            });
+            
+            skill.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+
+        // Contact item click handlers
+        document.querySelectorAll('.contact-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const text = this.querySelector('p').textContent;
+                if (text.includes('@')) {
+                    window.location.href = `mailto:${text}`;
+                } else if (text.includes('linkedin')) {
+                    window.open(`https://www.${text}`, '_blank');
+                } else if (text.includes('-')) {
+                    window.location.href = `tel:${text}`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
