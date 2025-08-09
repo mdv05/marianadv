@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mariana Duong-Vázquez | Actuarial Professional</title>
+    <title>Mariana Duong-Vázquez | Actuarial Science Professional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="translations.js"></script>
     <style>
         * {
             margin: 0;
@@ -11,418 +15,1079 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary: #00B4D8;
+            --primary-dark: #0077B6;
+            --accent: #90E0EF;
+            --warm: #FFB700;
+            --text-dark: #03045E;
+            --text-light: #666;
+            --bg-cream: #FAF8F3;
+            --bg-white: #FFFFFF;
+            --border-light: #E5DDD0;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #00B4D8 0%, #0077B6 100%);
+            --gradient-3: linear-gradient(135deg, #FFB700 0%, #FF6B35 100%);
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-dark);
+            background: var(--bg-cream);
             overflow-x: hidden;
+            cursor: default;
+        }
+
+        ::selection {
+            background: var(--primary);
+            color: white;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
         }
 
         /* Header */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
             position: fixed;
             top: 0;
             width: 100%;
+            background: rgba(250, 248, 243, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            padding: 20px 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #764ba2;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .logo:hover::after {
+            width: 100%;
         }
 
         .nav-links {
             display: flex;
+            gap: 2.5rem;
             list-style: none;
-            gap: 2rem;
         }
 
         .nav-links a {
+            color: var(--text-dark);
             text-decoration: none;
-            color: #333;
+            font-size: 0.875rem;
             font-weight: 500;
-            transition: color 0.3s ease;
+            letter-spacing: 0.05em;
             position: relative;
+            transition: color 0.3s ease;
+            cursor: pointer;
         }
 
-        .nav-links a:hover {
-            color: #764ba2;
-        }
-
-        .nav-links a::after {
+        .nav-links a::before {
             content: '';
             position: absolute;
             bottom: -5px;
             left: 0;
             width: 0;
             height: 2px;
-            background: #764ba2;
-            transition: width 0.3s ease;
+            background: var(--primary);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .nav-links a:hover::after {
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::before {
             width: 100%;
+        }
+
+        /* Toggle Buttons */
+        .toggle-buttons {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .toggle-btn {
+            position: relative;
+            padding: 0.4rem 0.8rem;
+            background: var(--bg-white);
+            border: 2px solid var(--border-light);
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            min-width: 80px;
+            justify-content: center;
+        }
+
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 180, 216, 0.3);
+        }
+
+        /* Language Toggle Specific */
+        #langToggle {
+            background: linear-gradient(135deg, #00B4D8 0%, #0077B6 100%);
+            color: white;
+            border: none;
+        }
+
+        #langToggle:hover {
+            box-shadow: 0 5px 20px rgba(0, 180, 216, 0.4);
+        }
+
+
+        @media (max-width: 768px) {
+            .toggle-buttons {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                flex-direction: column;
+                z-index: 1000;
+            }
+            
+            .toggle-btn {
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            margin-top: 80px;
+            padding: 100px 0;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
             position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, var(--bg-cream) 0%, rgba(144, 224, 239, 0.1) 100%);
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23667eea" stop-opacity="0.1"/><stop offset="100%" stop-color="%23764ba2" stop-opacity="0.3"/></radialGradient></defs><circle cx="200" cy="200" r="150" fill="url(%23a)"/><circle cx="800" cy="300" r="200" fill="url(%23a)"/><circle cx="400" cy="700" r="180" fill="url(%23a)"/></svg>') no-repeat center/cover;
-            animation: float 6s ease-in-out infinite;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            padding: 4rem 3rem;
-            border-radius: 25px;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            animation: fadeInUp 1s ease;
-            max-width: 600px;
+            animation: slideInLeft 1s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 0.875rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--primary);
             margin-bottom: 1rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #667eea, #764ba2, #ff6b6b);
-            background-size: 200% 200%;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-size: clamp(3.5rem, 6vw, 5rem);
+            font-weight: 900;
+            line-height: 1;
+            background: var(--gradient-2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: gradientShift 3s ease-in-out infinite;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
         }
 
-        .hero p {
-            font-size: 1.3rem;
+        .hero-description {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-light);
             margin-bottom: 2rem;
-            color: #555;
-            font-weight: 500;
+            max-width: 500px;
         }
 
-        .cta-button {
-            background: linear-gradient(45deg, #ff6b6b, #ffa726);
-            color: white;
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-stat-label {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.5rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .btn {
             padding: 1rem 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
             border: none;
             border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
             display: inline-block;
         }
 
-        .cta-button:hover {
+        .btn-primary {
+            background: var(--gradient-2);
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 180, 216, 0.3);
+        }
+
+        .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 15px 40px rgba(0, 180, 216, 0.4);
         }
 
-        /* Sections */
-        section {
-            padding: 5rem 0;
-            background: white;
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
         }
 
-        section:nth-child(even) {
-            background: #f8f9fa;
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
+        .hero-image {
             position: relative;
+            animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .section-title::after {
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .hero-image::before {
             content: '';
             position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-2);
+            border-radius: 20px;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .float-1 {
+            width: 100px;
+            height: 100px;
+            background: var(--primary);
+            top: 20%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .float-2 {
+            width: 60px;
+            height: 60px;
+            background: var(--warm);
+            bottom: 20%;
+            left: 10%;
+            animation-delay: 2s;
+        }
+
+        .float-3 {
             width: 80px;
-            height: 3px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            height: 80px;
+            background: var(--accent);
+            top: 60%;
+            right: 30%;
+            animation-delay: 4s;
         }
 
         /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .stat-item {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-        }
-
-        /* Education Section */
-        .education-card {
+        .about {
+            padding: 100px 0;
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-            transition: transform 0.3s ease;
+            position: relative;
         }
 
-        .education-card:hover {
-            transform: translateY(-5px);
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
         }
 
-        .education-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .section-label {
+            font-size: 0.875rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--primary);
+            font-weight: 600;
             margin-bottom: 1rem;
         }
 
-        .university {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #764ba2;
+        .section-title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
         }
 
-        .degree {
-            font-size: 1.1rem;
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text-content {
+            padding-right: 2rem;
+        }
+
+        .about-text {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+        }
+
+        .about-highlight {
+            background: linear-gradient(120deg, rgba(0, 180, 216, 0.1) 0%, rgba(0, 180, 216, 0.05) 100%);
+            padding: 2rem;
+            border-left: 4px solid var(--primary);
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .about-highlight p {
+            font-size: 1.125rem;
+            color: var(--text-dark);
+            font-style: italic;
+        }
+
+        .about-skills {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            padding: 1.5rem;
+            background: var(--bg-cream);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-card-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-card-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-dark);
             margin-bottom: 0.5rem;
         }
 
-        .gpa {
-            background: linear-gradient(45deg, #4CAF50, #8BC34A);
-            color: white;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-weight: 600;
+        .skill-card-description {
+            font-size: 0.875rem;
+            color: var(--text-light);
         }
 
-        /* Experience Section */
-        .timeline {
+        /* Education Section */
+        .education {
+            padding: 100px 0;
+            background: var(--bg-cream);
+        }
+
+        .education-timeline {
             position: relative;
-            padding-left: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .timeline::before {
+        .education-timeline::before {
             content: '';
             position: absolute;
-            left: 0;
-            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
             height: 100%;
-            width: 3px;
-            background: linear-gradient(to bottom, #667eea, #764ba2);
+            background: var(--primary);
+            opacity: 0.2;
         }
 
         .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
             position: relative;
-            margin-bottom: 3rem;
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .timeline-item:hover {
-            transform: translateX(10px);
         }
 
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -2.75rem;
-            top: 2rem;
-            width: 15px;
-            height: 15px;
-            background: #667eea;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border: 4px solid white;
             border-radius: 50%;
-            border: 3px solid white;
+            box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.1);
         }
 
-        .job-title {
-            font-size: 1.2rem;
+        .timeline-content {
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-date {
+            font-size: 0.875rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-title {
+            font-size: 1.5rem;
             font-weight: 700;
-            color: #764ba2;
+            color: var(--text-dark);
             margin-bottom: 0.5rem;
         }
 
-        .company {
+        .timeline-subtitle {
             font-size: 1rem;
-            color: #666;
-            margin-bottom: 1rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-description {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .timeline-achievements {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .achievement-badge {
+            padding: 0.25rem 0.75rem;
+            background: var(--gradient-2);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .experience-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .experience-card {
+            padding: 2.5rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-2);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .experience-logo {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-company {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-role {
+            font-size: 1.125rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-date {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-description {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .experience-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-tag {
+            padding: 0.25rem 0.75rem;
+            background: rgba(0, 180, 216, 0.1);
+            color: var(--primary);
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: 600;
         }
 
         /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+        .skills {
+            padding: 100px 0;
+            background: var(--bg-cream);
         }
 
-        .skill-category {
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .skill-group {
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
         }
 
-        .skill-category:hover {
+        .skill-group:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
 
-        .skill-category h3 {
-            color: #764ba2;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+        .skill-group-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
         }
 
-        .skill-item {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
+        .skill-group-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-pill {
             padding: 0.5rem 1rem;
+            background: var(--bg-cream);
+            color: var(--text-dark);
             border-radius: 25px;
-            margin: 0.5rem 0.5rem 0.5rem 0;
-            display: inline-block;
-            font-size: 0.9rem;
-            transition: transform 0.3s ease;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: default;
         }
 
-        .skill-item:hover {
+        .skill-pill:hover {
+            background: var(--gradient-2);
+            color: white;
             transform: scale(1.05);
         }
 
         /* Projects Section */
+        .projects {
+            padding: 100px 0;
+            background: white;
+        }
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
+            margin-top: 4rem;
         }
 
         .project-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
         }
 
         .project-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         }
 
-        .project-header {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+        .project-image {
+            width: 100%;
+            height: 250px;
+            background: var(--gradient-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
             color: white;
-            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-image::after {
+            opacity: 1;
         }
 
         .project-content {
-            padding: 1.5rem;
+            padding: 2rem;
         }
 
-        /* Contact Section */
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            padding: 0.25rem 0.75rem;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: gap 0.3s ease;
+        }
+
+        .project-link:hover {
+            gap: 1rem;
+        }
+
+        /* Achievements Section */
+        .achievements {
+            padding: 100px 0;
+            background: var(--gradient-2);
+            color: white;
             text-align: center;
         }
 
-        .contact-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
         }
 
-        .contact-item:hover {
+        .achievement-item {
+            padding: 2rem;
+        }
+
+        .achievement-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-label {
+            font-size: 1.125rem;
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: var(--bg-cream);
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+        }
+
+        .contact-description {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .contact-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
 
         .contact-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #764ba2;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.25rem;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
+        .contact-label {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-value {
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-value:hover {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 0;
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+
+            .hero-grid,
+            .about-content,
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .timeline-item::before {
+                left: 0;
+            }
+
+            .education-timeline::before {
+                left: 0;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .experience-cards,
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
         }
 
+        /* Loading Animation */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.6s ease;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .fade-in.visible {
@@ -430,287 +1095,455 @@
             transform: translateY(0);
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .timeline {
-                padding-left: 1rem;
-            }
-
-            .timeline-item {
-                margin-left: 1rem;
-            }
-        }
-
-        /* Floating Action Button */
-        .fab {
+        /* Cursor Effects */
+        .cursor-dot {
+            width: 5px;
+            height: 5px;
+            background: var(--primary);
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: linear-gradient(45deg, #ff6b6b, #ffa726);
-            color: white;
-            width: 60px;
-            height: 60px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 1000;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.15s ease;
         }
 
-        .fab:hover {
-            transform: scale(1.1) rotate(360deg);
+        .cursor-outline {
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--primary);
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transition: all 0.15s ease;
         }
     </style>
 </head>
 <body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
     <header>
-        <nav class="container">
-            <div class="logo">MDV</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <div class="logo">Mariana Duong-Vázquez</div>
+                <ul class="nav-links">
+                    <li><a href="#about" data-en="About" data-es="Acerca de">About</a></li>
+                    <li><a href="#education" data-en="Education" data-es="Educación">Education</a></li>
+                    <li><a href="#experience" data-en="Experience" data-es="Experiencia">Experience</a></li>
+                    <li><a href="#skills" data-en="Skills" data-es="Habilidades">Skills</a></li>
+                    <li><a href="#projects" data-en="Projects" data-es="Proyectos">Projects</a></li>
+                    <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
+                </ul>
+                <div class="toggle-buttons">
+                    <button class="toggle-btn" id="langToggle" onclick="toggleLanguage()">
+                        <span>🌐</span>
+                        <span class="lang-text">ES</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>Mariana Duong-Vázquez</h1>
-            <p>Actuarial Science Student & Future Insurance Professional</p>
-            <a href="#contact" class="cta-button">Get In Touch</a>
-        </div>
-    </section>
-
-    <section id="about" class="fade-in">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">3.66
-
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-subtitle" data-en="Actuarial Science & Data Analytics" data-es="Ciencias Actuariales y Análisis de Datos">Actuarial Science & Data Analytics</div>
+                    <h1 class="hero-title">Mariana<br>Duong-Vázquez</h1>
+                    <p class="hero-description">
+                        Passionate actuarial science student at UConn combining analytical expertise with innovative technology. Currently preparing for Exam 2/FM (October 2025) while transforming risk assessment and retirement planning.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">3.66</div>
+                            <div class="hero-stat-label">GPA</div>
                         </div>
-                        <div>GPA</div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">4+</div>
+                            <div class="hero-stat-label">Years Experience</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">2027</div>
+                            <div class="hero-stat-label">Graduation</div>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">2027</div>
-                        <div>Expected Graduation</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">4+</div>
-                        <div>Years Experience</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">5+</div>
-                        <div>Leadership Roles</div>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary" data-en="Get In Touch" data-es="Contáctame">Get In Touch</a>
+                        <a href="#projects" class="btn btn-outline" data-en="View Projects" data-es="Ver Proyectos">View Projects</a>
                     </div>
                 </div>
-                <div>
-                    <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
-                        I'm a dedicated Mathematics/Actuarial Science student at the University of Connecticut with a passion for data analysis, risk assessment, and diversity & inclusion in the actuarial field. As an active leader in multiple organizations, I bring both analytical skills and cultural awareness to every project.
+                <div class="hero-image">
+                    <div class="hero-image-wrapper">
+                        <img src="MarianaWebsitePhoto.png" alt="Mariana Duong-Vázquez">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="floating-element float-1"></div>
+        <div class="floating-element float-2"></div>
+        <div class="floating-element float-3"></div>
+    </section>
+
+    <section id="about" class="about fade-in">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label" data-en="About Me" data-es="Acerca de Mí">About Me</div>
+                <h2 class="section-title" data-en="Bridging Mathematics & Innovation" data-es="Uniendo Matemáticas e Innovación">Bridging Mathematics & Innovation</h2>
+                <p class="section-subtitle">Combining actuarial expertise with cutting-edge technology to create impactful solutions</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text-content">
+                    <p class="about-text">
+                        I'm a dedicated Mathematics and Actuarial Science student at the University of Connecticut, passionate about leveraging data analytics and emerging technologies to transform the insurance and retirement planning industry.
                     </p>
-                    <p style="font-size: 1.1rem;">
-                        Currently preparing for my Exam 2/FM and gaining hands-on experience through internships, I'm committed to building a career that combines mathematical precision with meaningful impact on underrepresented communities in actuarial science.
+                    <div class="about-highlight">
+                        <p>"Currently preparing for Exam 2/FM (October 2025) while building innovative solutions that bridge traditional actuarial science with cutting-edge AI and web technologies."</p>
+                    </div>
+                    <p class="about-text">
+                        My journey combines rigorous academic training with hands-on experience at Segal, where I developed AI-powered retirement solutions. I balance technical expertise with creative pursuits through professional modeling, demonstrating versatility and exceptional time management across diverse fields.
                     </p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" class="fade-in">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-card">
-                <div class="education-header">
-                    <div>
-                        <div class="university">University of Connecticut</div>
-                        <div class="degree">Bachelor of Art in Mathematics/Actuarial Science</div>
-                        <div style="color: #666;">Storrs, CT</div>
+                <div class="about-skills">
+                    <div class="skill-card">
+                        <div class="skill-card-icon">📊</div>
+                        <div class="skill-card-title">Data Analytics</div>
+                        <div class="skill-card-description">Advanced modeling and analysis using Python, R, and Excel</div>
                     </div>
-                    <div style="text-align: right;">
-                        <div class="gpa">GPA: 3.66</div>
-                        <div style="margin-top: 0.5rem; color: #666;">Expected May 2027</div>
+                    <div class="skill-card">
+                        <div class="skill-card-icon">🤖</div>
+                        <div class="skill-card-title">AI Innovation</div>
+                        <div class="skill-card-description">Expertise in Claude, ChatGPT, and generative AI development</div>
                     </div>
-                </div>
-                <div style="margin-top: 1rem;">
-                    <strong>Study Abroad:</strong> University of Connecticut Field School, Greece (July 2024)
-                </div>
-            </div>
-            <div class="education-card">
-                <h3 style="color: #764ba2; margin-bottom: 1rem;">Actuarial Progress</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-                    <div>
-                        <strong>Upcoming:</strong> Exam 2/FM (August 2025)
+                    <div class="skill-card">
+                        <div class="skill-card-icon">💼</div>
+                        <div class="skill-card-title">Actuarial Science</div>
+                        <div class="skill-card-description">Studying for Exam 2/FM, valuation projects, and risk assessment</div>
                     </div>
-                    <div>
-                        <strong>Completed:</strong> VEE coursework in Economics and Accounting
+                    <div class="skill-card">
+                        <div class="skill-card-icon">🌟</div>
+                        <div class="skill-card-title">Leadership</div>
+                        <div class="skill-card-description">Project management and team coordination across organizations</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="fade-in">
+    <section id="education" class="education fade-in">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="timeline">
+            <div class="section-header">
+                <div class="section-label" data-en="Education" data-es="Educación">Education</div>
+                <h2 class="section-title" data-en="Academic Journey" data-es="Trayectoria Académica">Academic Journey</h2>
+            </div>
+            <div class="education-timeline">
                 <div class="timeline-item">
-                    <div class="job-title">Actuarial Intern</div>
-                    <div class="company">Segal | Farmington, CT | May 2025 – August 2025</div>
-                    <ul>
-                        <li>Gains hands-on experience in retirement consulting and provides support for actuarial valuation projects</li>
-                        <li>Collaborates with experienced actuaries on proofreading reports, government filings, and benefit calculations</li>
-                        <li>Participates in professional development programs and mentorship opportunities</li>
-                    </ul>
-                </div>
-                <div class="timeline-item">
-                    <div class="job-title">Model</div>
-                    <div class="company">Tina Kiniry Management | Rocky Hill, CT | September 2021 – Present</div>
-                    <ul>
-                        <li>Collaborates strategically with photographers and agencies to ensure successful shoots</li>
-                        <li>Maintains professionalism by consistently meeting tight deadlines across multiple projects</li>
-                        <li>Balances professional commitments with academic excellence and leadership roles over 4 years</li>
-                    </ul>
-                </div>
-                <div class="timeline-item">
-                    <div class="job-title">Busser</div>
-                    <div class="company">Sicily Coal Fired Pizza | Part-time | August 2022 – August 2023</div>
-                    <ul>
-                        <li>Accountable for providing good customer service by communicating with guests and maintaining eating areas clear for an average of 90 newly seated guests per day</li>
-                        <li>Multitasked duties such as setting and clearing tables, keeping the dining area neat, and assisting staff in delivering food and setting up reservations in a fast-paced culinary environment</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="fade-in">
-        <div class="container">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Technical Skills</h3>
-                    <div class="skill-item">Microsoft Excel</div>
-                    <div class="skill-item">VBA</div>
-                    <div class="skill-item">Python</div>
-                    <div class="skill-item">R</div>
-                    <div class="skill-item">PowerPoint</div>
-                </div>
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <div class="skill-item">English (Fluent)</div>
-                    <div class="skill-item">Spanish (Fluent)</div>
-                </div>
-                <div class="skill-category">
-                    <h3>Actuarial</h3>
-                    <div class="skill-item">Risk Assessment</div>
-                    <div class="skill-item">Data Analysis</div>
-                    <div class="skill-item">Financial Modeling</div>
-                    <div class="skill-item">VEE Economics</div>
-                    <div class="skill-item">VEE Accounting</div>
-                </div>
-                <div class="skill-category">
-                    <h3>Leadership</h3>
-                    <div class="skill-item">Project Management</div>
-                    <div class="skill-item">Event Planning</div>
-                    <div class="skill-item">Team Coordination</div>
-                    <div class="skill-item">Public Speaking</div>
-                    <div class="skill-item">Mentorship</div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 2027</div>
+                        <div class="timeline-title">Bachelor of Arts</div>
+                        <div class="timeline-subtitle">Mathematics/Actuarial Science</div>
+                        <div class="timeline-description">
+                            University of Connecticut, Storrs<br>
+                            GPA: 3.66/4.0
+                        </div>
+                        <div class="timeline-achievements">
+                            <span class="achievement-badge">Exam 2/FM (Oct 2025)</span>
+                            <span class="achievement-badge">VEE Economics</span>
+                            <span class="achievement-badge">VEE Accounting</span>
+                        </div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Summer 2025</div>
+                        <div class="timeline-title">Field School</div>
+                        <div class="timeline-subtitle">University of Connecticut, Greece</div>
+                        <div class="timeline-description">
+                            Intensive archaeological and cultural field study program collecting and analyzing data on local populations, policies, and historical structures through hands-on research and excavation.
+                        </div>
+                        <div class="timeline-achievements">
+                            <span class="achievement-badge">Field Research</span>
+                            <span class="achievement-badge">Cultural Studies</span>
+                            <span class="achievement-badge">International Experience</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="fade-in">
+    <section id="experience" class="experience fade-in">
         <div class="container">
-            <h2 class="section-title">Featured Project</h2>
+            <div class="section-header">
+                <div class="section-label" data-en="Experience" data-es="Experiencia">Experience</div>
+                <h2 class="section-title" data-en="Professional Journey" data-es="Trayectoria Profesional">Professional Journey</h2>
+            </div>
+            <div class="experience-cards">
+                <div class="experience-card">
+                    <div class="experience-logo">S</div>
+                    <div class="experience-company">Segal</div>
+                    <div class="experience-role">Actuarial Intern</div>
+                    <div class="experience-date">June 2024 - August 2024 | Hartford, CT</div>
+                    <div class="experience-description">
+                        Led innovation in retirement consulting through AI-powered solutions. Managed complex valuation projects, conducted gain/loss analysis, and developed a revolutionary chatbot for early-career retirement engagement. Presented to senior leadership, demonstrating exceptional technical and communication skills.
+                    </div>
+                    <div class="experience-skills">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Google Cloud</span>
+                        <span class="skill-tag">AI Development</span>
+                        <span class="skill-tag">Data Analysis</span>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-logo">TK</div>
+                    <div class="experience-company">Tina Kiniry Management</div>
+                    <div class="experience-role">Professional Model</div>
+                    <div class="experience-date">September 2021 - Present | Rocky Hill, CT</div>
+                    <div class="experience-description">
+                        Successfully balance professional modeling career with academic excellence. Collaborate with photographers and agencies while maintaining leadership roles and a strong GPA. Demonstrate exceptional time management, professionalism, and adaptability across diverse projects.
+                    </div>
+                    <div class="experience-skills">
+                        <span class="skill-tag">Project Management</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Time Management</span>
+                        <span class="skill-tag">Professionalism</span>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-logo">🍕</div>
+                    <div class="experience-company">Sicily Coal Fired Pizza</div>
+                    <div class="experience-role">Customer Service</div>
+                    <div class="experience-date">August 2022 - August 2023 | Part-time</div>
+                    <div class="experience-description">
+                        Provided exceptional customer service in a fast-paced environment, managing dining areas for 90+ guests daily. Developed strong multitasking abilities and interpersonal skills while maintaining high service standards.
+                    </div>
+                    <div class="experience-skills">
+                        <span class="skill-tag">Customer Service</span>
+                        <span class="skill-tag">Multitasking</span>
+                        <span class="skill-tag">Team Collaboration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills fade-in">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label" data-en="Skills" data-es="Habilidades">Skills</div>
+                <h2 class="section-title" data-en="Technical Expertise" data-es="Experiencia Técnica">Technical Expertise</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-group">
+                    <div class="skill-group-icon">💻</div>
+                    <h3 class="skill-group-title">Programming & Development</h3>
+                    <div class="skill-list">
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">R</span>
+                        <span class="skill-pill">React</span>
+                        <span class="skill-pill">VBA</span>
+                        <span class="skill-pill">JavaScript</span>
+                        <span class="skill-pill">SQL</span>
+                        <span class="skill-pill">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-group-icon">🤖</div>
+                    <h3 class="skill-group-title">AI & Cloud Technologies</h3>
+                    <div class="skill-list">
+                        <span class="skill-pill">Claude</span>
+                        <span class="skill-pill">ChatGPT</span>
+                        <span class="skill-pill">Gemini</span>
+                        <span class="skill-pill">Copilot</span>
+                        <span class="skill-pill">Cursor</span>
+                        <span class="skill-pill">Google Cloud</span>
+                        <span class="skill-pill">GitHub</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-group-icon">📊</div>
+                    <h3 class="skill-group-title">Actuarial & Analytics</h3>
+                    <div class="skill-list">
+                        <span class="skill-pill">Microsoft Excel</span>
+                        <span class="skill-pill">Financial Modeling</span>
+                        <span class="skill-pill">Risk Assessment</span>
+                        <span class="skill-pill">Data Analysis</span>
+                        <span class="skill-pill">Valuation Projects</span>
+                        <span class="skill-pill">Gain/Loss Analysis</span>
+                        <span class="skill-pill">Government Filings</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-group-icon">🌐</div>
+                    <h3 class="skill-group-title">Professional Skills</h3>
+                    <div class="skill-list">
+                        <span class="skill-pill">Project Management</span>
+                        <span class="skill-pill">Team Leadership</span>
+                        <span class="skill-pill">Public Speaking</span>
+                        <span class="skill-pill">Event Planning</span>
+                        <span class="skill-pill">Spanish (Native)</span>
+                        <span class="skill-pill">English (Native)</span>
+                        <span class="skill-pill">PowerPoint</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects fade-in">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label" data-en="Projects" data-es="Proyectos">Projects</div>
+                <h2 class="section-title" data-en="Featured Work" data-es="Trabajo Destacado">Featured Work</h2>
+            </div>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-header">
-                        <h3>Janet and Mark L. Goldenson Center Case Study Competition</h3>
-                        <div style="opacity: 0.9;">February 2024 – April 2024</div>
-                    </div>
+                    <div class="project-image">🤖</div>
                     <div class="project-content">
-                        <p style="margin-bottom: 1rem;">
-                            Conducted comprehensive group research on lower-income market insurance needs and developed an innovative flexible insurance policy model resembling universal life insurance.
+                        <h3 class="project-title">AI-Powered Retirement Chatbot</h3>
+                        <p class="project-description">
+                            Developed an innovative conversational AI solution for early-career retirement engagement. Built a functional web platform that provides personalized retirement planning guidance through natural language processing.
                         </p>
-                        <p style="margin-bottom: 1rem;">
-                            <strong>Key Innovation:</strong> Designed an AI-driven mobile app that allows users to select desired coverage options and generates personalized insurance plans within their budget constraints.
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Google Cloud</span>
+                            <span class="tech-tag">Gen AI</span>
+                        </div>
+                        <a href="https://retirechat-rsxzhpzuva-uc.a.run.app/" target="_blank" class="project-link">View Live Demo →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">🏆</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Goldenson Case Study Competition</h3>
+                        <p class="project-description">
+                            Led team analysis of complex actuarial case scenarios, developing innovative solutions for retirement plan optimization. Presented findings to industry professionals, demonstrating advanced problem-solving and communication skills.
                         </p>
-                        <p>
-                            <strong>Impact:</strong> Presented solution to industry professionals and faculty, demonstrating potential for increased accessibility and reduced barriers to insurance coverage.
+                        <div class="project-tech">
+                            <span class="tech-tag">Case Analysis</span>
+                            <span class="tech-tag">Team Leadership</span>
+                            <span class="tech-tag">Financial Modeling</span>
+                            <span class="tech-tag">Presentation</span>
+                        </div>
+                        <a href="#" class="project-link">View Details →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image" style="background: var(--gradient-3);">🚀</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Retirement Planning Platform</h3>
+                        <p class="project-description">
+                            Built a functional proof-of-concept web platform that blends actuarial expertise with emerging technologies. Created an interactive dashboard for retirement planning calculations and visualizations.
                         </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Actuarial Models</span>
+                        </div>
+                        <a href="https://retirementhub-d274c.web.app/#" target="_blank" class="project-link">View Live Platform →</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="fade-in">
+    <section class="achievements fade-in">
         <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <h3>Email</h3>
-                    <p>mariana.duong-vazquez@uconn.edu</p>
+            <div class="section-header">
+                <h2 class="section-title" style="color: white;">Achievements & Impact</h2>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-item">
+                    <div class="achievement-number">3.66</div>
+                    <div class="achievement-label">GPA while balancing multiple roles</div>
                 </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📱</div>
-                    <h3>Phone</h3>
-                    <p>860-807-5335</p>
+                <div class="achievement-item">
+                    <div class="achievement-number">13</div>
+                    <div class="achievement-label">Week comprehensive internship</div>
                 </div>
-                <div class="contact-item">
-                    <div class="contact-icon">🌐</div>
-                    <h3>LinkedIn</h3>
-                    <p>linkedin.com/in/mariana-duong-vázquez</p>
+                <div class="achievement-item">
+                    <div class="achievement-number">4+</div>
+                    <div class="achievement-label">Years of professional experience</div>
                 </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <h3>Location</h3>
-                    <p>Middletown, CT</p>
+                <div class="achievement-item">
+                    <div class="achievement-number">2</div>
+                    <div class="achievement-label">Languages spoken fluently</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="fab" onclick="scrollToTop()">↑</div>
+    <section id="contact" class="contact fade-in">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="contact-title" data-en="Let's Connect!" data-es="¡Conectemos!">Let's Connect!</h2>
+                <p class="contact-description">
+                    I'm always excited to discuss actuarial science, data analytics, and innovative technology solutions.
+                </p>
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-label">Email</div>
+                        <a href="mailto:mariana.duong-vazquez@uconn.edu" class="contact-value">mariana.duong-vazquez@uconn.edu</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-label">Phone</div>
+                        <a href="tel:+18608075335" class="contact-value">(860) 807-5335</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-label">LinkedIn</div>
+                        <a href="https://www.linkedin.com/in/mariana-duong-vázquez" target="_blank" class="contact-value">Connect</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-label">Location</div>
+                        <div class="contact-value">Middletown, CT</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="footer-text">© 2024 Mariana Duong-Vázquez. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
 
-        // Fade in animation on scroll
+        // Header scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const header = document.querySelector('header');
+            
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Intersection Observer for fade-in animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -728,58 +1561,257 @@
             observer.observe(el);
         });
 
-        // Header background change on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
+        // Custom cursor
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+            
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+            
+            cursorOutline.style.left = `${posX}px`;
+            cursorOutline.style.top = `${posY}px`;
         });
 
-        // Scroll to top function
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        // Cursor hover effects
+        const hoverElements = document.querySelectorAll('a, button, .btn, .project-card, .experience-card, .contact-card');
+        hoverElements.forEach(elem => {
+            elem.addEventListener('mouseenter', () => {
+                cursorDot.style.transform = 'scale(2)';
+                cursorOutline.style.transform = 'scale(1.5)';
             });
-        }
+            elem.addEventListener('mouseleave', () => {
+                cursorDot.style.transform = 'scale(1)';
+                cursorOutline.style.transform = 'scale(1)';
+            });
+        });
 
-        // Dynamic text animation for hero
-        const heroTitle = document.querySelector('.hero h1');
-        const text = heroTitle.textContent;
-        heroTitle.textContent = '';
+        // Parallax effect for floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const floats = document.querySelectorAll('.floating-element');
+            
+            floats.forEach((float, index) => {
+                const speed = 0.5 + index * 0.1;
+                float.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Dynamic year in footer
+        const year = new Date().getFullYear();
+        document.querySelector('.footer-text').textContent = `© ${year} Mariana Duong-Vázquez. All rights reserved.`;
+
+        // Language Management
+        let currentLang = localStorage.getItem('language') || 'en';
         
-        for (let i = 0; i < text.length; i++) {
-            setTimeout(() => {
-                heroTitle.textContent += text[i];
-            }, i * 100);
-        }
-
-        // Interactive skill items
-        document.querySelectorAll('.skill-item').forEach(skill => {
-            skill.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.05) rotate(3deg)';
+        function updateContent(lang) {
+            const t = translations[lang];
+            
+            // Navigation
+            document.querySelectorAll('.nav-links a').forEach((link, index) => {
+                const keys = ['about', 'education', 'experience', 'skills', 'projects', 'contact'];
+                link.textContent = t.nav[keys[index]];
             });
             
-            skill.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1) rotate(0deg)';
-            });
-        });
-
-        // Contact item click handlers
-        document.querySelectorAll('.contact-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const text = this.querySelector('p').textContent;
-                if (text.includes('@')) {
-                    window.location.href = `mailto:${text}`;
-                } else if (text.includes('linkedin')) {
-                    window.open(`https://www.${text}`, '_blank');
-                } else if (text.includes('-')) {
-                    window.location.href = `tel:${text}`;
-                }
-            });
+            // Hero Section
+            document.querySelector('.hero-subtitle').textContent = t.hero.subtitle;
+            document.querySelector('.hero-description').textContent = t.hero.description;
+            document.querySelectorAll('.hero-stat-label')[0].textContent = t.hero.stats.gpa;
+            document.querySelectorAll('.hero-stat-label')[1].textContent = t.hero.stats.experience;
+            document.querySelectorAll('.hero-stat-label')[2].textContent = t.hero.stats.graduation;
+            document.querySelectorAll('.hero-cta a')[0].textContent = t.hero.cta.contact;
+            document.querySelectorAll('.hero-cta a')[1].textContent = t.hero.cta.projects;
+            
+            // About Section
+            const aboutSection = document.querySelector('#about');
+            aboutSection.querySelector('.section-label').textContent = t.about.label;
+            aboutSection.querySelector('.section-title').textContent = t.about.title;
+            aboutSection.querySelector('.section-subtitle').textContent = t.about.subtitle;
+            aboutSection.querySelectorAll('.about-text')[0].textContent = t.about.text1;
+            aboutSection.querySelector('.about-highlight p').textContent = `"${t.about.highlight}"`;
+            aboutSection.querySelectorAll('.about-text')[1].textContent = t.about.text2;
+            
+            // About Cards
+            const aboutCards = aboutSection.querySelectorAll('.skill-card');
+            aboutCards[0].querySelector('.skill-card-title').textContent = t.about.cards.data.title;
+            aboutCards[0].querySelector('.skill-card-description').textContent = t.about.cards.data.desc;
+            aboutCards[1].querySelector('.skill-card-title').textContent = t.about.cards.ai.title;
+            aboutCards[1].querySelector('.skill-card-description').textContent = t.about.cards.ai.desc;
+            aboutCards[2].querySelector('.skill-card-title').textContent = t.about.cards.actuarial.title;
+            aboutCards[2].querySelector('.skill-card-description').textContent = t.about.cards.actuarial.desc;
+            aboutCards[3].querySelector('.skill-card-title').textContent = t.about.cards.leadership.title;
+            aboutCards[3].querySelector('.skill-card-description').textContent = t.about.cards.leadership.desc;
+            
+            // Education Section
+            const educationSection = document.querySelector('#education');
+            educationSection.querySelector('.section-label').textContent = t.education.label;
+            educationSection.querySelector('.section-title').textContent = t.education.title;
+            
+            // Education timeline items
+            const timelineItems = educationSection.querySelectorAll('.timeline-item');
+            // First timeline item (Degree)
+            const firstTimeline = timelineItems[0].querySelectorAll('.timeline-content')[0];
+            firstTimeline.querySelector('.timeline-date').textContent = t.education.degree.date;
+            firstTimeline.querySelector('.timeline-title').textContent = t.education.degree.title;
+            firstTimeline.querySelector('.timeline-subtitle').textContent = t.education.degree.subtitle;
+            firstTimeline.querySelector('.timeline-description').innerHTML = t.education.degree.description + '<br>' + t.education.degree.gpa;
+            
+            // Update degree badges
+            const degreeBadges = firstTimeline.querySelectorAll('.achievement-badge');
+            if (t.education.degree.badges) {
+                degreeBadges[0].textContent = t.education.degree.badges.exam;
+                degreeBadges[1].textContent = t.education.degree.badges.veeEcon;
+                degreeBadges[2].textContent = t.education.degree.badges.veeAcct;
+            }
+            
+            // Second timeline item (Study Abroad)
+            const secondTimeline = timelineItems[0].querySelectorAll('.timeline-content')[1];
+            secondTimeline.querySelector('.timeline-date').textContent = t.education.abroad.date;
+            secondTimeline.querySelector('.timeline-title').textContent = t.education.abroad.title;
+            secondTimeline.querySelector('.timeline-subtitle').textContent = t.education.abroad.subtitle;
+            secondTimeline.querySelector('.timeline-description').textContent = t.education.abroad.description;
+            
+            // Update abroad badges
+            const abroadBadges = secondTimeline.querySelectorAll('.achievement-badge');
+            if (t.education.abroad.badges) {
+                abroadBadges[0].textContent = t.education.abroad.badges.field;
+                abroadBadges[1].textContent = t.education.abroad.badges.cultural;
+                abroadBadges[2].textContent = t.education.abroad.badges.intl;
+            }
+            
+            // Experience Section
+            const experienceSection = document.querySelector('#experience');
+            experienceSection.querySelector('.section-label').textContent = t.experience.label;
+            experienceSection.querySelector('.section-title').textContent = t.experience.title;
+            
+            const experienceCards = experienceSection.querySelectorAll('.experience-card');
+            // Segal
+            experienceCards[0].querySelector('.experience-role').textContent = t.experience.segal.role;
+            experienceCards[0].querySelector('.experience-date').textContent = t.experience.segal.date;
+            experienceCards[0].querySelector('.experience-description').textContent = t.experience.segal.desc;
+            if (t.experience.segal.skills) {
+                const segalSkills = experienceCards[0].querySelectorAll('.skill-tag');
+                segalSkills.forEach((tag, i) => {
+                    if (t.experience.segal.skills[i]) tag.textContent = t.experience.segal.skills[i];
+                });
+            }
+            
+            // Model
+            experienceCards[1].querySelector('.experience-role').textContent = t.experience.model.role;
+            experienceCards[1].querySelector('.experience-date').textContent = t.experience.model.date;
+            experienceCards[1].querySelector('.experience-description').textContent = t.experience.model.desc;
+            if (t.experience.model.skills) {
+                const modelSkills = experienceCards[1].querySelectorAll('.skill-tag');
+                modelSkills.forEach((tag, i) => {
+                    if (t.experience.model.skills[i]) tag.textContent = t.experience.model.skills[i];
+                });
+            }
+            
+            // Pizza
+            experienceCards[2].querySelector('.experience-role').textContent = t.experience.pizza.role;
+            experienceCards[2].querySelector('.experience-date').textContent = t.experience.pizza.date;
+            experienceCards[2].querySelector('.experience-description').textContent = t.experience.pizza.desc;
+            if (t.experience.pizza.skills) {
+                const pizzaSkills = experienceCards[2].querySelectorAll('.skill-tag');
+                pizzaSkills.forEach((tag, i) => {
+                    if (t.experience.pizza.skills[i]) tag.textContent = t.experience.pizza.skills[i];
+                });
+            }
+            
+            // Skills Section
+            const skillsSection = document.querySelector('#skills');
+            skillsSection.querySelector('.section-label').textContent = t.skills.label;
+            skillsSection.querySelector('.section-title').textContent = t.skills.title;
+            
+            const skillGroups = skillsSection.querySelectorAll('.skill-group-title');
+            skillGroups[0].textContent = t.skills.categories.programming;
+            skillGroups[1].textContent = t.skills.categories.ai;
+            skillGroups[2].textContent = t.skills.categories.actuarial;
+            skillGroups[3].textContent = t.skills.categories.professional;
+            
+            // Projects Section
+            const projectsSection = document.querySelector('#projects');
+            projectsSection.querySelector('.section-label').textContent = t.projects.label;
+            projectsSection.querySelector('.section-title').textContent = t.projects.title;
+            
+            const projectCards = projectsSection.querySelectorAll('.project-card');
+            // Chatbot
+            projectCards[0].querySelector('.project-title').textContent = t.projects.chatbot.title;
+            projectCards[0].querySelector('.project-description').textContent = t.projects.chatbot.desc;
+            projectCards[0].querySelector('.project-link').textContent = t.projects.chatbot.link;
+            if (t.projects.chatbot.tech) {
+                const chatbotTech = projectCards[0].querySelectorAll('.tech-tag');
+                chatbotTech.forEach((tag, i) => {
+                    if (t.projects.chatbot.tech[i]) tag.textContent = t.projects.chatbot.tech[i];
+                });
+            }
+            
+            // Goldenson
+            projectCards[1].querySelector('.project-title').textContent = t.projects.goldenson.title;
+            projectCards[1].querySelector('.project-description').textContent = t.projects.goldenson.desc;
+            projectCards[1].querySelector('.project-link').textContent = t.projects.goldenson.link;
+            if (t.projects.goldenson.tech) {
+                const goldensonTech = projectCards[1].querySelectorAll('.tech-tag');
+                goldensonTech.forEach((tag, i) => {
+                    if (t.projects.goldenson.tech[i]) tag.textContent = t.projects.goldenson.tech[i];
+                });
+            }
+            
+            // Platform
+            projectCards[2].querySelector('.project-title').textContent = t.projects.platform.title;
+            projectCards[2].querySelector('.project-description').textContent = t.projects.platform.desc;
+            projectCards[2].querySelector('.project-link').textContent = t.projects.platform.link;
+            if (t.projects.platform.tech) {
+                const platformTech = projectCards[2].querySelectorAll('.tech-tag');
+                platformTech.forEach((tag, i) => {
+                    if (t.projects.platform.tech[i]) tag.textContent = t.projects.platform.tech[i];
+                });
+            }
+            
+            // Achievements Section
+            const achievementsSection = document.querySelector('.achievements');
+            achievementsSection.querySelector('.section-title').textContent = t.achievements.title;
+            
+            const achievementLabels = achievementsSection.querySelectorAll('.achievement-label');
+            achievementLabels[0].textContent = t.achievements.items.gpa;
+            achievementLabels[1].textContent = t.achievements.items.internship;
+            achievementLabels[2].textContent = t.achievements.items.experience;
+            achievementLabels[3].textContent = t.achievements.items.languages;
+            
+            // Contact Section
+            const contactSection = document.querySelector('#contact');
+            if (contactSection) {
+                contactSection.querySelector('.contact-title').textContent = t.contact.title;
+                contactSection.querySelector('.contact-description').textContent = t.contact.description;
+                const contactLabels = contactSection.querySelectorAll('.contact-label');
+                contactLabels[0].textContent = t.contact.labels.email;
+                contactLabels[1].textContent = t.contact.labels.phone;
+                contactLabels[2].textContent = t.contact.labels.linkedin;
+                contactLabels[3].textContent = t.contact.labels.location;
+            }
+            
+            // Footer
+            const year = new Date().getFullYear();
+            document.querySelector('.footer-text').textContent = `© ${year} Mariana Duong-Vázquez. ${t.footer}`;
+        }
+        
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'es' : 'en';
+            localStorage.setItem('language', currentLang);
+            const langBtn = document.getElementById('langToggle');
+            langBtn.querySelector('.lang-text').textContent = currentLang === 'en' ? 'Español' : 'English';
+            updateContent(currentLang);
+        }
+        
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            // Set initial language
+            updateContent(currentLang);
+            document.getElementById('langToggle').querySelector('.lang-text').textContent = 
+                currentLang === 'en' ? 'Español' : 'English';
         });
     </script>
 </body>
