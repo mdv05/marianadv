@@ -1960,8 +1960,19 @@
             projectsSection.querySelector('.section-title').textContent = t.projects.title;
             
             const projectCards = projectsSection.querySelectorAll('.project-card');
-            // Skip FutureScope (index 0) as it's not in translations
-            // Skip RetireHub (index 1) as it's the platform project
+            
+            // FutureScope - now at index 0
+            if (projectCards[0] && t.projects.futurescope) {
+                projectCards[0].querySelector('.project-title').textContent = t.projects.futurescope.title;
+                projectCards[0].querySelector('.project-description').textContent = t.projects.futurescope.desc;
+                projectCards[0].querySelector('.project-link').textContent = t.projects.futurescope.link;
+                if (t.projects.futurescope.tech) {
+                    const futurescopeTech = projectCards[0].querySelectorAll('.tech-tag');
+                    futurescopeTech.forEach((tag, i) => {
+                        if (t.projects.futurescope.tech[i]) tag.textContent = t.projects.futurescope.tech[i];
+                    });
+                }
+            }
             
             // Platform (RetireHub) - now at index 1
             if (projectCards[1]) {

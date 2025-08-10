@@ -133,6 +133,12 @@ const translations = {
                 desc: "Built a functional proof-of-concept web platform that blends actuarial expertise with emerging technologies. Created an interactive dashboard for retirement planning calculations and visualizations.",
                 link: "View Live Platform →",
                 tech: ["React", "Firebase", "JavaScript", "Actuarial Models"]
+            },
+            futurescope: {
+                title: "FutureScope - Financial Projection Calculator",
+                desc: "Developed a comprehensive web-based financial calculator suite featuring multiple calculation tools for investment analysis, loan amortization, and financial planning. Built with a modern, intuitive interface for seamless user experience.",
+                link: "View Live Calculator →",
+                tech: ["Python", "Flask", "Google Cloud Run", "Financial Modeling"]
             }
         },
         // Achievements Section
@@ -294,6 +300,12 @@ const translations = {
                 desc: "Construí una plataforma web funcional que combina experiencia actuarial con tecnologías nuevas. Creé un dashboard interactivo para cálculos y visualizaciones de planificación de retiro.",
                 link: "Mira la Plataforma →",
                 tech: ["React", "Firebase", "JavaScript", "Modelos Actuariales"]
+            },
+            futurescope: {
+                title: "FutureScope - Calculadora de Proyección Financiera",
+                desc: "Desarrollé una suite completa de calculadoras financieras basada en web con múltiples herramientas de cálculo para análisis de inversiones, amortización de préstamos y planificación financiera. Construida con una interfaz moderna e intuitiva para una experiencia de usuario fluida.",
+                link: "Ver Calculadora →",
+                tech: ["Python", "Flask", "Google Cloud Run", "Modelado Financiero"]
             }
         },
         // Achievements Section
