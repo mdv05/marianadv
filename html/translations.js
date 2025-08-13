@@ -84,7 +84,7 @@ const translations = {
             title: "Professional Journey",
             segal: {
                 role: "Actuarial Intern",
-                date: "June 2024 - August 2024 | Hartford, CT",
+                date: "May 2025 - August 2025 | Hartford, CT",
                 desc: "Led innovation in retirement consulting through AI-powered solutions. Managed complex valuation projects, conducted gain/loss analysis, and developed a revolutionary chatbot for early-career retirement engagement. Presented to senior leadership, demonstrating exceptional technical and communication skills.",
                 skills: ["Python", "React", "Google Cloud", "AI Development", "Data Analysis"]
             },
@@ -251,7 +251,7 @@ const translations = {
             title: "Trayectoria Profesional",
             segal: {
                 role: "Internado Actuarial",
-                date: "Junio 2024 - Agosto 2024 | Hartford, CT",
+                date: "Mayo 2025 - Agosto 2025 | Hartford, CT",
                 desc: "Lideré la innovación en consultoría de retiro con soluciones de IA. Manejé proyectos complejos de valuación, hice análisis de ganancias/pérdidas y desarrollé un chatbot revolucionario para ayudar con el retiro temprano. Presenté a los jefes principales, demostrando destrezas técnicas y de comunicación excepcionales.",
                 skills: ["Python", "React", "Google Cloud", "Desarrollo IA", "Análisis de Datos"]
             },
