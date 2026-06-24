@@ -1,6 +1,6 @@
 # Mariana Duong-Vázquez - Portfolio Website
 
-## 🌟 Overview
+## 🌟 Overview :)
 Personal portfolio website showcasing my journey as an Actuarial Science student at the University of Connecticut, combining analytical expertise with innovative technology solutions.
 
 ## 🎨 Features
