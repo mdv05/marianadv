@@ -57,9 +57,10 @@ The entire website is contained in `html/index.html` with:
 
 ### Key Features
 - **Responsive Design**: Mobile-first approach with CSS Grid and Flexbox
-- **Smooth Animations**: CSS transitions and intersection observer for scroll animations
-- **Interactive Elements**: Hover effects, smooth scrolling navigation, and dynamic content
-- **Professional Styling**: Gradient backgrounds, glassmorphism effects, and modern UI
+- **Smooth Animations**: CSS transitions and intersection observer for scroll animations; stat count-up honors `prefers-reduced-motion`
+- **Interactive Elements**: Hover effects, smooth scrolling navigation, scrollspy nav highlighting, reading progress bar, back-to-top button
+- **Professional Styling**: Gradient backgrounds, glassmorphism header, layered card shadows, inline SVG line icons (no emoji icons)
+- **Linked Logos**: Experience cards (MassMutual/Segal/TK) and education cards (UConn/NUS) show official logos wrapped in links to each organization's site
 
 ### CSS Organization
 - Global styles and resets (lines 8-20)

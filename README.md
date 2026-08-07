@@ -5,9 +5,10 @@ Personal portfolio website showcasing my journey as an Actuarial Science student
 
 ## 🎨 Features
 - **Bilingual Support** - Full English and Puerto Rican Spanish translations with seamless language toggle
-- **Modern Design** - Warm neutral colors with turquoise accents for a professional yet approachable aesthetic
-- **Responsive Layout** - Optimized for all devices with smooth animations and interactions
-- **Interactive Elements** - Dynamic skill badges, project cards, and smooth scrolling navigation
+- **Modern Design** - Warm neutral colors with turquoise accents, layered card shadows, SVG line icons, and a reading progress bar
+- **Linked Brand Logos** - Official MassMutual, Segal, Tina Kiniry Management, UConn, and NUS logos linking to each organization
+- **Responsive Layout** - Optimized for all devices with smooth animations, scrollspy navigation, and a back-to-top control
+- **Accessible Interactions** - Animated stat counters and transitions that respect `prefers-reduced-motion`, with visible focus states
 - **Professional Typography** - Featuring Playfair Display and Inter fonts for optimal readability
 
 ## 📚 Sections

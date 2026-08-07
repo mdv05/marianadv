@@ -49,6 +49,9 @@
             background: var(--bg-cream);
             overflow-x: hidden;
             cursor: default;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
 
         ::selection {
@@ -69,6 +72,7 @@
         /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 96px;
         }
 
         /* Custom Scrollbar */
@@ -94,8 +98,10 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(250, 248, 243, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(250, 248, 243, 0.82);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-bottom: 1px solid rgba(3, 4, 94, 0.05);
             z-index: 1000;
             padding: 20px 0;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -103,7 +109,7 @@
 
         header.scrolled {
             padding: 15px 0;
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 30px rgba(3, 4, 94, 0.07);
         }
 
         nav {
@@ -173,6 +179,21 @@
             width: 100%;
         }
 
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a.active::before {
+            width: 100%;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid rgba(0, 180, 216, 0.45);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
         /* Toggle Buttons */
         .toggle-buttons {
             display: flex;
@@ -237,7 +258,10 @@
             display: flex;
             align-items: center;
             position: relative;
-            background: linear-gradient(135deg, var(--bg-cream) 0%, rgba(144, 224, 239, 0.1) 100%);
+            background:
+                radial-gradient(ellipse 55% 45% at 88% 12%, rgba(144, 224, 239, 0.22), transparent 65%),
+                radial-gradient(ellipse 45% 40% at 8% 90%, rgba(255, 183, 0, 0.09), transparent 65%),
+                linear-gradient(135deg, var(--bg-cream) 0%, rgba(144, 224, 239, 0.1) 100%);
         }
 
         .hero-grid {
@@ -364,6 +388,31 @@
             transform: translateY(-3px);
         }
 
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Inline icon sizing */
+        .skill-card-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .skill-group-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .contact-icon svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .toggle-btn svg {
+            width: 14px;
+            height: 14px;
+        }
+
         .hero-image {
             position: relative;
             animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1);
@@ -395,7 +444,7 @@
         }
 
         .hero-image:hover img {
-            transform: scale(1.02);
+            transform: scale(1.02) rotate(0.75deg);
         }
 
         .hero-image::before {
@@ -479,6 +528,20 @@
             margin-bottom: 1rem;
         }
 
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 52px;
+            height: 4px;
+            border-radius: 2px;
+            background: var(--gradient-2);
+            margin: 1.25rem auto 0;
+        }
+
+        .achievements .section-title::after {
+            background: rgba(255, 255, 255, 0.85);
+        }
+
         .section-subtitle {
             font-size: 1.125rem;
             color: var(--text-light);
@@ -528,14 +591,15 @@
         .skill-card {
             padding: 1.5rem;
             background: var(--bg-cream);
-            border-radius: 10px;
+            border: 1px solid rgba(3, 4, 94, 0.04);
+            border-radius: 12px;
             transition: all 0.3s ease;
             cursor: default;
         }
 
         .skill-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 30px rgba(3, 4, 94, 0.08);
         }
 
         .skill-card-icon {
@@ -608,16 +672,40 @@
         }
 
         .timeline-content {
+            position: relative;
             padding: 2rem;
             background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(3, 4, 94, 0.06);
+            border-radius: 16px;
+            box-shadow: 0 1px 2px rgba(3, 4, 94, 0.03), 0 12px 32px rgba(3, 4, 94, 0.06);
             transition: all 0.3s ease;
         }
 
         .timeline-content:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(3, 4, 94, 0.05), 0 22px 44px rgba(3, 4, 94, 0.1);
+        }
+
+        .timeline-logo {
+            position: absolute;
+            top: 1.6rem;
+            right: 1.6rem;
+            width: 54px;
+            height: 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .timeline-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .timeline-logo:hover {
+            transform: translateY(-3px) scale(1.06);
         }
 
         .timeline-date {
@@ -678,8 +766,9 @@
         .experience-card {
             padding: 2.5rem;
             background: white;
+            border: 1px solid rgba(3, 4, 94, 0.06);
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 1px 2px rgba(3, 4, 94, 0.03), 0 12px 32px rgba(3, 4, 94, 0.06);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: default;
             position: relative;
@@ -697,8 +786,8 @@
         }
 
         .experience-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 6px 16px rgba(3, 4, 94, 0.06), 0 28px 56px rgba(3, 4, 94, 0.13);
         }
 
         .experience-logo {
@@ -729,7 +818,7 @@
         
         .experience-logo.tk-logo {
             background: transparent;
-            width: 100px;
+            width: 130px;
             height: 60px;
         }
         
@@ -757,8 +846,24 @@
         }
 
         .experience-logo.massmutual-logo {
-            background: #002F6C;
-            font-size: 1.15rem;
+            background: transparent;
+            width: 180px;
+            max-width: 100%;
+        }
+
+        .experience-logo-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            text-decoration: none;
+        }
+
+        .experience-logo-link .experience-logo {
+            margin-bottom: 0;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .experience-logo-link:hover .experience-logo {
+            transform: translateY(-3px) scale(1.03);
         }
 
         .experience-logo.ola-logo {
@@ -803,9 +908,10 @@
 
         .skill-tag {
             padding: 0.25rem 0.75rem;
-            background: rgba(0, 180, 216, 0.1);
-            color: var(--primary);
-            border-radius: 5px;
+            background: rgba(0, 180, 216, 0.08);
+            border: 1px solid rgba(0, 180, 216, 0.18);
+            color: var(--primary-dark);
+            border-radius: 6px;
             font-size: 0.75rem;
             font-weight: 600;
         }
@@ -826,14 +932,15 @@
         .skill-group {
             background: white;
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(3, 4, 94, 0.06);
+            border-radius: 16px;
+            box-shadow: 0 1px 2px rgba(3, 4, 94, 0.03), 0 12px 30px rgba(3, 4, 94, 0.05);
             transition: all 0.3s ease;
         }
 
         .skill-group:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(3, 4, 94, 0.05), 0 18px 40px rgba(3, 4, 94, 0.1);
         }
 
         .skill-group-icon {
@@ -846,6 +953,7 @@
             justify-content: center;
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
+            color: white;
         }
 
         .skill-group-title {
@@ -893,9 +1001,10 @@
 
         .project-card {
             background: white;
+            border: 1px solid rgba(3, 4, 94, 0.06);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 1px 2px rgba(3, 4, 94, 0.03), 0 12px 32px rgba(3, 4, 94, 0.06);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             position: relative;
@@ -906,8 +1015,8 @@
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 6px 16px rgba(3, 4, 94, 0.06), 0 28px 56px rgba(3, 4, 94, 0.13);
         }
 
         .project-image {
@@ -967,8 +1076,9 @@
         .tech-tag {
             padding: 0.25rem 0.75rem;
             background: var(--bg-cream);
+            border: 1px solid var(--border-light);
             color: var(--text-dark);
-            border-radius: 5px;
+            border-radius: 6px;
             font-size: 0.75rem;
             font-weight: 600;
         }
@@ -1076,15 +1186,20 @@
         .contact-card {
             padding: 2rem;
             background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(3, 4, 94, 0.06);
+            border-radius: 16px;
+            box-shadow: 0 1px 2px rgba(3, 4, 94, 0.03), 0 12px 30px rgba(3, 4, 94, 0.05);
             transition: all 0.3s ease;
             cursor: pointer;
         }
 
         .contact-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(3, 4, 94, 0.05), 0 18px 40px rgba(3, 4, 94, 0.1);
+        }
+
+        .contact-card:hover .contact-icon {
+            transform: translateY(-3px) scale(1.06);
         }
 
         .contact-icon {
@@ -1098,6 +1213,7 @@
             margin: 0 auto 1rem;
             color: white;
             font-size: 1.25rem;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .contact-label {
@@ -1253,6 +1369,18 @@
             .projects-grid {
                 grid-template-columns: 1fr;
             }
+
+            .timeline-logo {
+                width: 44px;
+                height: 44px;
+                top: 1.25rem;
+                right: 1.25rem;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                left: 16px;
+            }
         }
 
         /* Loading Animation */
@@ -1265,6 +1393,64 @@
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            z-index: 1001;
+            pointer-events: none;
+        }
+
+        .scroll-progress-bar {
+            height: 100%;
+            width: 0;
+            background: var(--gradient-2);
+            border-radius: 0 2px 2px 0;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--bg-white);
+            border: 1px solid rgba(3, 4, 94, 0.08);
+            box-shadow: 0 6px 20px rgba(3, 4, 94, 0.12);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .back-to-top svg {
+            width: 20px;
+            height: 20px;
         }
 
         /* Cursor Effects */
@@ -1289,9 +1475,44 @@
             z-index: 9998;
             transition: all 0.15s ease;
         }
+
+        /* Touch devices: no custom cursor */
+        @media (hover: none), (pointer: coarse) {
+            .cursor-dot,
+            .cursor-outline {
+                display: none;
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .cursor-dot,
+            .cursor-outline,
+            .floating-element {
+                display: none;
+            }
+
+            .fade-in {
+                opacity: 1;
+                transform: none;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar"></div></div>
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
@@ -1310,7 +1531,7 @@
                 </ul>
                 <div class="toggle-buttons">
                     <button class="toggle-btn" id="langToggle" onclick="toggleLanguage()">
-                        <span>🌐</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                         <span class="lang-text">ES</span>
                     </button>
                 </div>
@@ -1379,22 +1600,22 @@
                 </div>
                 <div class="about-skills">
                     <div class="skill-card">
-                        <div class="skill-card-icon">📊</div>
+                        <div class="skill-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
                         <div class="skill-card-title">Data Analytics</div>
                         <div class="skill-card-description">Advanced modeling and analysis using Python, R, and Excel</div>
                     </div>
                     <div class="skill-card">
-                        <div class="skill-card-icon">🤖</div>
+                        <div class="skill-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></div>
                         <div class="skill-card-title">AI Innovation</div>
                         <div class="skill-card-description">Expertise in Claude, ChatGPT, and generative AI development</div>
                     </div>
                     <div class="skill-card">
-                        <div class="skill-card-icon">💼</div>
+                        <div class="skill-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
                         <div class="skill-card-title">Actuarial Science</div>
                         <div class="skill-card-description">Preparing for Exam 2/FM, with product pricing, valuation, and risk assessment experience</div>
                     </div>
                     <div class="skill-card">
-                        <div class="skill-card-icon">🌟</div>
+                        <div class="skill-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
                         <div class="skill-card-title">Leadership</div>
                         <div class="skill-card-description">Officer and committee roles across OLA, UConn Actuarial Society, and VSA</div>
                     </div>
@@ -1412,6 +1633,9 @@
             <div class="education-timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <a class="timeline-logo" href="https://uconn.edu" target="_blank" rel="noopener noreferrer" aria-label="Visit the University of Connecticut website">
+                            <img src="uconn-logo.png" alt="University of Connecticut logo">
+                        </a>
                         <div class="timeline-date">Class of 2027</div>
                         <div class="timeline-title">Bachelor of Arts</div>
                         <div class="timeline-subtitle">Mathematics/Actuarial Science</div>
@@ -1427,6 +1651,9 @@
                         </div>
                     </div>
                     <div class="timeline-content">
+                        <a class="timeline-logo" href="https://nus.edu.sg" target="_blank" rel="noopener noreferrer" aria-label="Visit the National University of Singapore website">
+                            <img src="nus-logo.svg" alt="National University of Singapore crest">
+                        </a>
                         <div class="timeline-date">January - May 2026</div>
                         <div class="timeline-title">Study Abroad</div>
                         <div class="timeline-subtitle">National University of Singapore</div>
@@ -1442,6 +1669,9 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <a class="timeline-logo" href="https://uconn.edu" target="_blank" rel="noopener noreferrer" aria-label="Visit the University of Connecticut website">
+                            <img src="uconn-logo.png" alt="University of Connecticut logo">
+                        </a>
                         <div class="timeline-date">July 2024</div>
                         <div class="timeline-title">Field School</div>
                         <div class="timeline-subtitle">University of Connecticut, Greece</div>
@@ -1467,7 +1697,11 @@
             </div>
             <div class="experience-cards">
                 <div class="experience-card">
-                    <div class="experience-logo massmutual-logo text-logo">MM</div>
+                    <a class="experience-logo-link" href="https://www.massmutual.com" target="_blank" rel="noopener noreferrer" aria-label="Visit the MassMutual website">
+                        <div class="experience-logo massmutual-logo">
+                            <img src="massmutual-logo.svg" alt="MassMutual logo">
+                        </div>
+                    </a>
                     <div class="experience-company">MassMutual</div>
                     <div class="experience-role">Actuarial Intern | Product Pricing &amp; Assumption Oversight</div>
                     <div class="experience-date">May 2026 - Present | Boston, MA</div>
@@ -1483,9 +1717,11 @@
                     </div>
                 </div>
                 <div class="experience-card">
-                    <div class="experience-logo segal-logo">
-                        <img src="segal-star.png" alt="Segal">
-                    </div>
+                    <a class="experience-logo-link" href="https://www.segalco.com" target="_blank" rel="noopener noreferrer" aria-label="Visit the Segal website">
+                        <div class="experience-logo segal-logo">
+                            <img src="segal-star.png" alt="Segal logo">
+                        </div>
+                    </a>
                     <div class="experience-company">Segal</div>
                     <div class="experience-role">Actuarial Intern</div>
                     <div class="experience-date">May 2025 - August 2025 | Farmington, CT</div>
@@ -1501,9 +1737,11 @@
                     </div>
                 </div>
                 <div class="experience-card">
-                    <div class="experience-logo tk-logo">
-                        <img src="tk-logo.png" alt="TK Management">
-                    </div>
+                    <a class="experience-logo-link" href="https://www.tinakiniry.com" target="_blank" rel="noopener noreferrer" aria-label="Visit the Tina Kiniry Management website">
+                        <div class="experience-logo tk-logo">
+                            <img src="tk-logo.png" alt="Tina Kiniry Management logo">
+                        </div>
+                    </a>
                     <div class="experience-company">Tina Kiniry Management</div>
                     <div class="experience-role">Professional Model</div>
                     <div class="experience-date">September 2021 - Present | Rocky Hill, CT</div>
@@ -1545,7 +1783,7 @@
             </div>
             <div class="skills-container">
                 <div class="skill-group">
-                    <div class="skill-group-icon">💻</div>
+                    <div class="skill-group-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
                     <h3 class="skill-group-title">Programming & Development</h3>
                     <div class="skill-list">
                         <span class="skill-pill">Python</span>
@@ -1556,7 +1794,7 @@
                     </div>
                 </div>
                 <div class="skill-group">
-                    <div class="skill-group-icon">🤖</div>
+                    <div class="skill-group-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
                     <h3 class="skill-group-title">AI & Cloud Technologies</h3>
                     <div class="skill-list">
                         <span class="skill-pill">Claude</span>
@@ -1569,7 +1807,7 @@
                     </div>
                 </div>
                 <div class="skill-group">
-                    <div class="skill-group-icon">📊</div>
+                    <div class="skill-group-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
                     <h3 class="skill-group-title">Actuarial & Analytics</h3>
                     <div class="skill-list">
                         <span class="skill-pill">Microsoft Excel</span>
@@ -1584,7 +1822,7 @@
                     </div>
                 </div>
                 <div class="skill-group">
-                    <div class="skill-group-icon">🌐</div>
+                    <div class="skill-group-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
                     <h3 class="skill-group-title">Professional Skills</h3>
                     <div class="skill-list">
                         <span class="skill-pill">Project Management</span>
@@ -1632,7 +1870,7 @@
                             <span class="tech-tag">Google Cloud Run</span>
                             <span class="tech-tag">Monte Carlo Simulation</span>
                         </div>
-                        <a href="https://financial-calculator-558243288785.us-central1.run.app/" target="_blank" class="project-link">View Live Calculator →</a>
+                        <a href="https://financial-calculator-558243288785.us-central1.run.app/" target="_blank" rel="noopener noreferrer" class="project-link">View Live Calculator →</a>
                     </div>
                 </div>
                 <!-- RetireHub -->
@@ -1658,7 +1896,7 @@
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">Actuarial Models</span>
                         </div>
-                        <a href="https://retirementhub-d274c.web.app/#" target="_blank" class="project-link">View Live Platform →</a>
+                        <a href="https://retirementhub-d274c.web.app/#" target="_blank" rel="noopener noreferrer" class="project-link">View Live Platform →</a>
                     </div>
                 </div>
                 <!-- RetireChat -->
@@ -1680,7 +1918,7 @@
                             <span class="tech-tag">Google Cloud</span>
                             <span class="tech-tag">Gen AI</span>
                         </div>
-                        <a href="https://retirechat-rsxzhpzuva-uc.a.run.app/" target="_blank" class="project-link">View Live Demo →</a>
+                        <a href="https://retirechat-rsxzhpzuva-uc.a.run.app/" target="_blank" rel="noopener noreferrer" class="project-link">View Live Demo →</a>
                     </div>
                 </div>
                 <!-- OLDEST: Goldenson -->
@@ -1837,22 +2075,22 @@
                 </p>
                 <div class="contact-cards">
                     <div class="contact-card">
-                        <div class="contact-icon">✉️</div>
+                        <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
                         <div class="contact-label">Email</div>
                         <a href="mailto:mduongvazquez@gmail.com" class="contact-value">mduongvazquez@gmail.com</a>
                     </div>
                     <div class="contact-card">
-                        <div class="contact-icon">📱</div>
+                        <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
                         <div class="contact-label">Phone</div>
                         <a href="tel:+18608075335" class="contact-value">(860) 807-5335</a>
                     </div>
                     <div class="contact-card">
-                        <div class="contact-icon">💼</div>
+                        <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
                         <div class="contact-label">LinkedIn</div>
-                        <a href="https://www.linkedin.com/in/mariana-duong-vazquez" target="_blank" class="contact-value">Connect</a>
+                        <a href="https://www.linkedin.com/in/mariana-duong-vazquez" target="_blank" rel="noopener noreferrer" class="contact-value">Connect</a>
                     </div>
                     <div class="contact-card">
-                        <div class="contact-icon">📍</div>
+                        <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
                         <div class="contact-label">Location</div>
                         <div class="contact-value">Middletown, CT</div>
                     </div>
@@ -1867,12 +2105,18 @@
         </div>
     </footer>
 
+    <button class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+    </button>
+
     <script>
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.length <= 1) return;
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth',
@@ -1882,20 +2126,50 @@
             });
         });
 
-        // Header scroll effect
+        // Header scroll effect, reading progress, back-to-top, and nav highlighting
         let lastScroll = 0;
+        const progressBar = document.querySelector('.scroll-progress-bar');
+        const backToTop = document.querySelector('.back-to-top');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('section[id]');
+
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
             const header = document.querySelector('header');
-            
+
             if (currentScroll > 100) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
-            
+
+            if (progressBar) {
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                progressBar.style.width = `${docHeight > 0 ? (currentScroll / docHeight) * 100 : 0}%`;
+            }
+
+            if (backToTop) {
+                backToTop.classList.toggle('visible', currentScroll > 600);
+            }
+
+            let activeId = '';
+            sections.forEach(section => {
+                if (currentScroll >= section.offsetTop - 180) {
+                    activeId = section.id;
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${activeId}`);
+            });
+
             lastScroll = currentScroll;
         });
+
+        if (backToTop) {
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
 
         // Intersection Observer for fade-in animations
         const observerOptions = {
@@ -1914,6 +2188,44 @@
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
+
+        // Animated stat count-up (skips year values, respects reduced motion)
+        const prefersReducedMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+        function animateNumber(el) {
+            const original = el.textContent.trim();
+            const match = original.match(/^(\d+(?:\.\d+)?)(.*)$/);
+            if (!match || parseFloat(match[1]) >= 1900) return;
+            const target = parseFloat(match[1]);
+            const decimals = (match[1].split('.')[1] || '').length;
+            const suffix = match[2];
+            const duration = 1100;
+            let start = null;
+            const step = (timestamp) => {
+                if (start === null) start = timestamp;
+                const progress = Math.min((timestamp - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = (target * eased).toFixed(decimals) + suffix;
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    el.textContent = original;
+                }
+            };
+            requestAnimationFrame(step);
+        }
+
+        if (!prefersReducedMotion) {
+            const statObserver = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateNumber(entry.target);
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            document.querySelectorAll('.hero-stat-number, .achievement-number').forEach(el => statObserver.observe(el));
+        }
 
         // Custom cursor
         const cursorDot = document.querySelector('.cursor-dot');
