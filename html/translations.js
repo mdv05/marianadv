@@ -7,12 +7,13 @@ const translations = {
             experience: "Experience",
             skills: "Skills",
             projects: "Projects",
+            leadership: "Leadership",
             contact: "Contact"
         },
         // Hero Section
         hero: {
             subtitle: "Actuarial Science & Data Analytics",
-            description: "Passionate actuarial science student at UConn combining analytical expertise with innovative technology. Currently preparing for Exam 2/FM (October 2025) while transforming risk assessment and retirement planning.",
+            description: "Passionate actuarial science student at UConn combining analytical expertise with innovative technology. Currently an Actuarial Intern at MassMutual preparing for Exam 2/FM (August 2026) while transforming risk assessment and retirement planning.",
             stats: {
                 gpa: "GPA",
                 experience: "Years Experience",
@@ -29,8 +30,8 @@ const translations = {
             title: "Bridging Mathematics & Innovation",
             subtitle: "Combining actuarial expertise with cutting-edge technology to create impactful solutions",
             text1: "I'm a dedicated Mathematics and Actuarial Science student at the University of Connecticut, passionate about leveraging data analytics and emerging technologies to transform the insurance and retirement planning industry.",
-            highlight: "Currently preparing for Exam 2/FM (October 2025) while building innovative solutions that bridge traditional actuarial science with cutting-edge AI and web technologies.",
-            text2: "My journey combines rigorous academic training with hands-on experience at Segal, where I developed AI-powered retirement solutions. I balance technical expertise with creative pursuits through professional modeling, demonstrating versatility and exceptional time management across diverse fields.",
+            highlight: "Currently interning at MassMutual in Product Pricing while preparing for Exam 2/FM (August 2026) — building solutions that bridge traditional actuarial science with cutting-edge AI and web technologies.",
+            text2: "My journey combines rigorous academic training — including a semester abroad at the National University of Singapore — with hands-on actuarial experience at MassMutual and Segal, where I developed AI-powered retirement solutions. I balance technical expertise with creative pursuits through professional modeling, demonstrating versatility and exceptional time management across diverse fields.",
             cards: {
                 data: {
                     title: "Data Analytics",
@@ -42,11 +43,11 @@ const translations = {
                 },
                 actuarial: {
                     title: "Actuarial Science",
-                    desc: "Studying for Exam 2/FM, valuation projects, and risk assessment"
+                    desc: "Preparing for Exam 2/FM, with product pricing, valuation, and risk assessment experience"
                 },
                 leadership: {
                     title: "Leadership",
-                    desc: "Project management and team coordination across organizations"
+                    desc: "Officer and committee roles across OLA, UConn Actuarial Society, and VSA"
                 }
             }
         },
@@ -55,19 +56,31 @@ const translations = {
             label: "Education",
             title: "Academic Journey",
             degree: {
-                date: "2022 - 2027",
+                date: "Class of 2027",
                 title: "Bachelor of Arts",
                 subtitle: "Mathematics/Actuarial Science",
                 description: "University of Connecticut, Storrs",
-                gpa: "GPA: 3.66/4.0",
+                gpa: "GPA: 3.53/4.0",
                 badges: {
-                    exam: "Exam 2/FM (Oct 2025)",
+                    exam: "Exam 2/FM (Aug 2026)",
                     veeEcon: "VEE Economics",
-                    veeAcct: "VEE Accounting"
+                    veeAcct: "VEE Accounting",
+                    honors: "Honors Program"
+                }
+            },
+            singapore: {
+                date: "January - May 2026",
+                title: "Study Abroad",
+                subtitle: "National University of Singapore",
+                description: "Semester-long exchange at Asia's top-ranked university, continuing mathematics and actuarial coursework while gaining a global perspective on finance and risk.",
+                badges: {
+                    exchange: "Semester Exchange",
+                    global: "Global Perspective",
+                    math: "Mathematics Coursework"
                 }
             },
             abroad: {
-                date: "Summer 2025",
+                date: "July 2024",
                 title: "Field School",
                 subtitle: "University of Connecticut, Greece",
                 description: "Intensive archaeological and cultural field study program collecting and analyzing data on local populations, policies, and historical structures through hands-on research and excavation.",
@@ -82,10 +95,16 @@ const translations = {
         experience: {
             label: "Experience",
             title: "Professional Journey",
+            massmutual: {
+                role: "Actuarial Intern | Product Pricing & Assumption Oversight",
+                date: "May 2026 - Present | Boston, MA",
+                desc: "Enhancing the core Excel/VBA tool behind MassMutual's Value of New Business (VNB) planning process — automating data intake, 2027 Plan calculations, and visuals into a repeatable workflow built to scale for a future Power BI migration. Collaborating with pricing teams to map the end-to-end VNB process and independently rebuilding the quarterly VNB reporting deck to eliminate manual re-entry.",
+                skills: ["Excel", "VBA", "Product Pricing", "Automation", "Data Visualization"]
+            },
             segal: {
                 role: "Actuarial Intern",
-                date: "May 2025 - August 2025 | Hartford, CT",
-                desc: "Led innovation in retirement consulting through AI-powered solutions. Managed complex valuation projects, conducted gain/loss analysis, and developed a revolutionary chatbot for early-career retirement engagement. Presented to senior leadership, demonstrating exceptional technical and communication skills.",
+                date: "May 2025 - August 2025 | Farmington, CT",
+                desc: "Led development of the winning group intern project — an actuarially driven retirement dashboard (RetireHub) paired with a generative-AI chatbot (RetireChat) — while supporting complex valuation projects, gain/loss analysis, benefit calculations, and government filings alongside experienced actuaries.",
                 skills: ["Python", "React", "Google Cloud", "AI Development", "Data Analysis"]
             },
             model: {
@@ -117,28 +136,55 @@ const translations = {
             label: "Projects",
             title: "Featured Work",
             chatbot: {
-                title: "AI-Powered Retirement Chatbot",
-                desc: "Developed an innovative conversational AI solution for early-career retirement engagement. Built a functional web platform that provides personalized retirement planning guidance through natural language processing.",
+                title: "RetireChat - AI Retirement Chatbot",
+                desc: "Developed an innovative conversational AI solution for early-career retirement engagement as part of Segal's winning intern project. Built a functional web platform that provides personalized retirement planning guidance through natural language processing.",
                 link: "View Live Demo →",
                 tech: ["Python", "React", "Google Cloud", "Gen AI"]
             },
             goldenson: {
                 title: "Goldenson Case Study Competition",
-                desc: "Led team analysis of complex actuarial case scenarios, developing innovative solutions for retirement plan optimization. Presented findings to industry professionals, demonstrating advanced problem-solving and communication skills.",
+                desc: "Conducted market research on lower-income segments and developed a flexible insurance policy model with adjustable contributions and AI-driven underwriting foundations for customized coverage plans — presented to industry professionals.",
                 link: "View Details →",
-                tech: ["Case Analysis", "Team Leadership", "Financial Modeling", "Presentation"]
+                tech: ["Market Research", "Insurance Modeling", "AI Underwriting", "Presentation"]
             },
             platform: {
-                title: "Retirement Planning Platform",
-                desc: "Built a functional proof-of-concept web platform that blends actuarial expertise with emerging technologies. Created an interactive dashboard for retirement planning calculations and visualizations.",
+                title: "RetireHub - Retirement Planning Platform",
+                desc: "Built the centerpiece of Segal's winning group intern project — a proof-of-concept platform blending actuarial expertise with emerging technologies through an interactive dashboard for retirement planning calculations and visualizations.",
                 link: "View Live Platform →",
                 tech: ["React", "Firebase", "JavaScript", "Actuarial Models"]
             },
             futurescope: {
                 title: "FutureScope - Financial Projection Calculator",
-                desc: "Developed a comprehensive web-based financial calculator suite featuring multiple calculation tools for investment analysis, loan amortization, and financial planning. Built with a modern, intuitive interface for seamless user experience.",
+                desc: "Engineered a retirement projection calculator built on Monte Carlo simulation, compound interest modeling, and inflation-adjusted present value analysis to deliver probabilistic long-term financial forecasts.",
                 link: "View Live Calculator →",
-                tech: ["Python", "Flask", "Google Cloud Run", "Financial Modeling"]
+                tech: ["Python", "Flask", "Google Cloud Run", "Monte Carlo Simulation"]
+            }
+        },
+        // Leadership Section
+        leadership: {
+            label: "Leadership",
+            title: "Leadership & Involvement",
+            ola: {
+                role: "Outreach Committee & Rising Leaders Program",
+                date: "September 2024 - Present | Remote",
+                desc: "Ambassador for actuarial career awareness — panelist at OLA's first national high school case competition and led outreach to 8,500 school counselors nationwide promoting Desafiando el Riesgo and OLA scholarship opportunities.",
+                skills: ["Outreach", "Public Speaking", "Mentorship"]
+            },
+            uas: {
+                role: "Incoming VP of Member Development · Director of Fundraising",
+                date: "September 2024 - Present | Storrs, CT",
+                desc: "Spearheaded fundraising strategies across campus initiatives, analyzing member engagement and contribution patterns in Excel to maximize proceeds. Previously Director of DEI, organizing UAS's first DEI event with six affinity organizations.",
+                skills: ["Fundraising", "Excel Analytics", "DEI", "Strategy"]
+            },
+            vsa: {
+                role: "Co-Chief Financial Officer",
+                date: "September 2024 - Present | Storrs, CT",
+                desc: "Conducted pricing analysis for 240+ units of nationally sold merchandise and fundraising initiatives, evaluating cost structures to maximize revenue while maintaining affordability. Previously Co-Events Coordinator, running bi-weekly events for 60-70 participants.",
+                skills: ["Pricing Analysis", "Budgeting", "Event Planning"]
+            },
+            associations: {
+                label: "Also active in:",
+                items: ["ALPFA Member · Since 2024", "UConn Honors Program · Since 2023"]
             }
         },
         // Achievements Section
@@ -146,7 +192,7 @@ const translations = {
             title: "Achievements & Impact",
             items: {
                 gpa: "GPA while balancing multiple roles",
-                internship: "Week comprehensive internship",
+                internship: "Actuarial internships — MassMutual & Segal",
                 experience: "Years of professional experience",
                 languages: "Languages spoken fluently"
             }
@@ -174,12 +220,13 @@ const translations = {
             experience: "Experiencia",
             skills: "Habilidades",
             projects: "Proyectos",
+            leadership: "Liderazgo",
             contact: "Contacto"
         },
         // Hero Section
         hero: {
             subtitle: "Ciencias Actuariales y Análisis de Datos",
-            description: "Estudiante apasionada de ciencias actuariales en UConn combinando experiencia analítica con tecnología innovadora. Ahora mismo me estoy preparando para el Examen 2/FM (Octubre 2025) mientras transformo la evaluación de riesgos y planificación de retiro.",
+            description: "Estudiante apasionada de ciencias actuariales en UConn combinando experiencia analítica con tecnología innovadora. Ahora mismo soy interna actuarial en MassMutual y me estoy preparando para el Examen 2/FM (Agosto 2026) mientras transformo la evaluación de riesgos y la planificación de retiro.",
             stats: {
                 gpa: "Promedio",
                 experience: "Años de Experiencia",
@@ -196,8 +243,8 @@ const translations = {
             title: "Uniendo Matemáticas e Innovación",
             subtitle: "Combinando experiencia actuarial con tecnología de punta para crear soluciones que impactan",
             text1: "Soy estudiante dedicada de Matemáticas y Ciencias Actuariales en la Universidad de Connecticut, bien apasionada por usar el análisis de datos y las tecnologías nuevas para transformar la industria de seguros y planificación de retiro.",
-            highlight: "Ahora mismo me estoy preparando para el Examen 2/FM (Octubre 2025) mientras creo soluciones innovadoras que conectan la ciencia actuarial tradicional con tecnologías de IA y web súper modernas.",
-            text2: "Mi trayectoria combina una formación académica bien sólida con experiencia práctica en Segal, donde desarrollé soluciones de retiro con IA. Balanceo mi experiencia técnica con el modelaje profesional, demostrando versatilidad y manejo del tiempo excepcional en diferentes campos.",
+            highlight: "Ahora mismo estoy de interna en MassMutual en pricing de productos mientras me preparo para el Examen 2/FM (Agosto 2026), creando soluciones que conectan la ciencia actuarial tradicional con tecnologías de IA y web súper modernas.",
+            text2: "Mi trayectoria combina una formación académica bien sólida — incluyendo un semestre de intercambio en la Universidad Nacional de Singapur — con experiencia actuarial práctica en MassMutual y Segal, donde desarrollé soluciones de retiro con IA. Balanceo mi experiencia técnica con el modelaje profesional, demostrando versatilidad y manejo del tiempo excepcional en diferentes campos.",
             cards: {
                 data: {
                     title: "Análisis de Datos",
@@ -209,11 +256,11 @@ const translations = {
                 },
                 actuarial: {
                     title: "Ciencias Actuariales",
-                    desc: "Estudiando para el Examen 2/FM, proyectos de valuación y evaluación de riesgos"
+                    desc: "Preparándome para el Examen 2/FM, con experiencia en pricing de productos, valuación y evaluación de riesgos"
                 },
                 leadership: {
                     title: "Liderazgo",
-                    desc: "Manejo de proyectos y coordinación de equipos en diferentes organizaciones"
+                    desc: "Roles de oficial y comités en OLA, la Sociedad Actuarial de UConn y VSA"
                 }
             }
         },
@@ -222,19 +269,31 @@ const translations = {
             label: "Educación",
             title: "Trayectoria Académica",
             degree: {
-                date: "2022 - 2027",
+                date: "Clase de 2027",
                 title: "Bachillerato en Artes",
                 subtitle: "Matemáticas/Ciencias Actuariales",
                 description: "Universidad de Connecticut, Storrs",
-                gpa: "GPA: 3.66/4.0",
+                gpa: "GPA: 3.53/4.0",
                 badges: {
-                    exam: "Examen 2/FM (Oct 2025)",
+                    exam: "Examen 2/FM (Ago 2026)",
                     veeEcon: "VEE Economía",
-                    veeAcct: "VEE Contabilidad"
+                    veeAcct: "VEE Contabilidad",
+                    honors: "Programa de Honores"
+                }
+            },
+            singapore: {
+                date: "Enero - Mayo 2026",
+                title: "Intercambio Académico",
+                subtitle: "Universidad Nacional de Singapur",
+                description: "Semestre de intercambio en la universidad #1 de Asia, continuando cursos de matemáticas y ciencias actuariales mientras gano una perspectiva global sobre finanzas y riesgo.",
+                badges: {
+                    exchange: "Intercambio Semestral",
+                    global: "Perspectiva Global",
+                    math: "Cursos de Matemáticas"
                 }
             },
             abroad: {
-                date: "Verano 2025",
+                date: "Julio 2024",
                 title: "Programa de Campo",
                 subtitle: "Universidad de Connecticut, Grecia",
                 description: "Programa intensivo de estudio arqueológico y cultural recopilando y analizando datos sobre poblaciones locales, políticas y estructuras históricas a través de investigación práctica y excavación.",
@@ -249,10 +308,16 @@ const translations = {
         experience: {
             label: "Experiencia",
             title: "Trayectoria Profesional",
+            massmutual: {
+                role: "Internado Actuarial | Pricing de Productos y Supervisión de Supuestos",
+                date: "Mayo 2026 - Presente | Boston, MA",
+                desc: "Estoy mejorando la herramienta principal de Excel/VBA del proceso de planificación del Valor de Nuevos Negocios (VNB) de MassMutual — automatizando la entrada de datos, los cálculos del Plan 2027 y los visuales en un flujo repetible, listo para escalar a una futura migración a Power BI. Colaboro con equipos de pricing para mapear el proceso VNB completo y reconstruyo el deck trimestral de reportes VNB para eliminar la entrada manual de datos.",
+                skills: ["Excel", "VBA", "Pricing de Productos", "Automatización", "Visualización de Datos"]
+            },
             segal: {
                 role: "Internado Actuarial",
-                date: "Mayo 2025 - Agosto 2025 | Hartford, CT",
-                desc: "Lideré la innovación en consultoría de retiro con soluciones de IA. Manejé proyectos complejos de valuación, hice análisis de ganancias/pérdidas y desarrollé un chatbot revolucionario para ayudar con el retiro temprano. Presenté a los jefes principales, demostrando destrezas técnicas y de comunicación excepcionales.",
+                date: "Mayo 2025 - Agosto 2025 | Farmington, CT",
+                desc: "Lideré el desarrollo del proyecto ganador de los internos — un dashboard de retiro actuarial (RetireHub) junto a un chatbot de IA generativa (RetireChat) — mientras apoyaba proyectos complejos de valuación, análisis de ganancias/pérdidas, cálculos de beneficios y radicaciones gubernamentales junto a actuarios con experiencia.",
                 skills: ["Python", "React", "Google Cloud", "Desarrollo IA", "Análisis de Datos"]
             },
             model: {
@@ -284,28 +349,55 @@ const translations = {
             label: "Proyectos",
             title: "Trabajo Destacado",
             chatbot: {
-                title: "Chatbot de Retiro con IA",
-                desc: "Desarrollé una solución innovadora de IA conversacional para ayudar con el retiro temprano. Construí una plataforma web funcional que da orientación personalizada de planificación de retiro usando procesamiento del lenguaje natural.",
+                title: "RetireChat - Chatbot de Retiro con IA",
+                desc: "Desarrollé una solución innovadora de IA conversacional para ayudar con la planificación temprana del retiro, como parte del proyecto ganador de los internos de Segal. Construí una plataforma web funcional que da orientación personalizada usando procesamiento del lenguaje natural.",
                 link: "Mira el Demo →",
                 tech: ["Python", "React", "Google Cloud", "IA Generativa"]
             },
             goldenson: {
                 title: "Competencia de Caso Goldenson",
-                desc: "Lideré el análisis del equipo en casos actuariales complejos, desarrollando soluciones innovadoras para optimizar planes de retiro. Presenté los hallazgos a profesionales de la industria, demostrando destrezas avanzadas para resolver problemas y comunicarme.",
+                desc: "Hice investigación de mercado sobre segmentos de bajos ingresos y desarrollé un modelo flexible de póliza de seguros con contribuciones ajustables y bases de suscripción con IA para planes de cobertura personalizados — presentado a profesionales de la industria.",
                 link: "Mira los Detalles →",
-                tech: ["Análisis de Casos", "Liderazgo de Equipo", "Modelado Financiero", "Presentación"]
+                tech: ["Investigación de Mercado", "Modelado de Seguros", "Suscripción con IA", "Presentación"]
             },
             platform: {
-                title: "Plataforma de Planificación de Retiro",
-                desc: "Construí una plataforma web funcional que combina experiencia actuarial con tecnologías nuevas. Creé un dashboard interactivo para cálculos y visualizaciones de planificación de retiro.",
+                title: "RetireHub - Plataforma de Planificación de Retiro",
+                desc: "Construí la pieza central del proyecto ganador de los internos de Segal — una plataforma funcional que combina experiencia actuarial con tecnologías nuevas a través de un dashboard interactivo para cálculos y visualizaciones de planificación de retiro.",
                 link: "Mira la Plataforma →",
                 tech: ["React", "Firebase", "JavaScript", "Modelos Actuariales"]
             },
             futurescope: {
                 title: "FutureScope - Calculadora de Proyección Financiera",
-                desc: "Desarrollé una suite completa de calculadoras financieras basada en web con múltiples herramientas de cálculo para análisis de inversiones, amortización de préstamos y planificación financiera. Construida con una interfaz moderna e intuitiva para una experiencia de usuario fluida.",
+                desc: "Diseñé una calculadora de proyección de retiro basada en simulaciones Monte Carlo, modelado de interés compuesto y análisis de valor presente ajustado por inflación para entregar pronósticos financieros probabilísticos a largo plazo.",
                 link: "Ver Calculadora →",
-                tech: ["Python", "Flask", "Google Cloud Run", "Modelado Financiero"]
+                tech: ["Python", "Flask", "Google Cloud Run", "Simulación Monte Carlo"]
+            }
+        },
+        // Leadership Section
+        leadership: {
+            label: "Liderazgo",
+            title: "Liderazgo y Participación",
+            ola: {
+                role: "Comité de Alcance y Programa Rising Leaders",
+                date: "Septiembre 2024 - Presente | Remoto",
+                desc: "Embajadora promoviendo la carrera actuarial — panelista en la primera competencia nacional de casos para escuela superior de OLA y lideré el alcance a 8,500 consejeros escolares en todo el país promoviendo Desafiando el Riesgo y las becas de OLA.",
+                skills: ["Alcance Comunitario", "Hablar en Público", "Mentoría"]
+            },
+            uas: {
+                role: "Próxima VP de Desarrollo de Miembros · Directora de Recaudación",
+                date: "Septiembre 2024 - Presente | Storrs, CT",
+                desc: "Dirigí estrategias de recaudación de fondos en el campus, analizando la participación de miembros y patrones de contribución en Excel para maximizar las ganancias. Antes fui Directora de DEI, organizando el primer evento DEI de UAS con seis organizaciones de afinidad.",
+                skills: ["Recaudación de Fondos", "Análisis en Excel", "DEI", "Estrategia"]
+            },
+            vsa: {
+                role: "Co-Directora Financiera (CFO)",
+                date: "Septiembre 2024 - Presente | Storrs, CT",
+                desc: "Hice análisis de precios para más de 240 unidades de mercancía vendida a nivel nacional e iniciativas de recaudación, evaluando estructuras de costos para maximizar ingresos manteniendo la asequibilidad. Antes fui Co-Coordinadora de Eventos, organizando eventos quincenales para 60-70 participantes.",
+                skills: ["Análisis de Precios", "Presupuestos", "Planificación de Eventos"]
+            },
+            associations: {
+                label: "También activa en:",
+                items: ["Miembro de ALPFA · Desde 2024", "Programa de Honores de UConn · Desde 2023"]
             }
         },
         // Achievements Section
@@ -313,7 +405,7 @@ const translations = {
             title: "Logros e Impacto",
             items: {
                 gpa: "GPA mientras balanceo múltiples roles",
-                internship: "Semanas de internado completo",
+                internship: "Internados actuariales — MassMutual y Segal",
                 experience: "Años de experiencia profesional",
                 languages: "Idiomas que hablo fluido"
             }

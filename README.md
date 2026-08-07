@@ -13,10 +13,11 @@ Personal portfolio website showcasing my journey as an Actuarial Science student
 ## 📚 Sections
 - **Hero** - Animated introduction with key statistics
 - **About** - Personal story and professional highlights
-- **Education** - Academic journey including UConn Field School in Greece
-- **Experience** - Professional roles at Segal, modeling career, and customer service
+- **Education** - Academic journey including study abroad at the National University of Singapore and the UConn Field School in Greece
+- **Experience** - Professional roles at MassMutual, Segal, modeling career, and customer service
 - **Skills** - Technical expertise across programming, AI, actuarial science, and professional skills
 - **Projects** - Featured work including AI-powered retirement chatbot and planning platform
+- **Leadership** - Officer and committee roles with OLA, UConn Actuarial Society, and VSA
 - **Achievements** - Key accomplishments and impact metrics
 - **Contact** - Direct links for professional connections
 
@@ -50,22 +51,22 @@ Visit the portfolio at: [marianadv.com](https://marianadv.com) *(or your configu
 
 ## 📅 Timeline
 - **Project Start**: May 2024
-- **Latest Major Update**: January 2025
+- **Latest Major Update**: August 2026
 - **Key Milestones**:
   - Initial HTML development and learning
   - Complete redesign with modern UI/UX
   - Bilingual functionality implementation
-  - Content updates for accuracy and relevance
+  - Content refresh from Summer 2026 resume (MassMutual internship, NUS study abroad, leadership section)
 
 ## 🎯 Current Focus
-- Preparing for Actuarial Exam 2/FM (October 2025)
+- Actuarial Intern at MassMutual (Product Pricing & Assumption Oversight)
+- Sitting Actuarial Exam 2/FM (August 2026)
 - Developing innovative AI-powered retirement solutions
-- Balancing academic excellence with professional modeling career
 
 ## 📫 Contact
-- **Email**: mariana.duong-vazquez@uconn.edu
+- **Email**: mduongvazquez@gmail.com
 - **Phone**: (860) 807-5335
-- **LinkedIn**: [mariana-duong-vázquez](https://www.linkedin.com/in/mariana-duong-vázquez)
+- **LinkedIn**: [mariana-duong-vazquez](https://www.linkedin.com/in/mariana-duong-vazquez)
 - **Location**: Middletown, CT
 
 ## 📄 License

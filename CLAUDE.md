@@ -12,7 +12,9 @@ This is a personal portfolio website for Mariana Duong-Vázquez, an Actuarial Sc
 marianadv/
 ├── html/
 │   ├── index.html          # Main portfolio website (single-page application)
-│   └── MarianaWebsitePhoto.jpeg  # Profile photo asset
+│   ├── translations.js     # EN/ES translation strings (must stay in sync with index.html)
+│   ├── MarianaWebsitePhoto.png   # Profile photo asset
+│   └── *.png / *.jpg       # Favicons, logos, and project images
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml      # GitHub Actions deployment workflow
@@ -78,15 +80,12 @@ The entire website is contained in `html/index.html` with:
 
 ## Content Management
 
-All content is hardcoded in the HTML file. To update:
+Content lives in TWO places that must be kept in sync:
 
-- **Personal Information**: Update hero section (lines 498-503)
-- **About Stats**: Modify stat items in about section (lines 509-528)
-- **Education**: Update education cards (lines 544-571)
-- **Experience**: Modify timeline items in experience section (lines 577-605)
-- **Skills**: Update skill categories and items (lines 611-642)
-- **Projects**: Modify project cards (lines 648-667)
-- **Contact**: Update contact information (lines 673-695)
+1. **`html/index.html`** — the default (English) markup for every section: hero, about, education, experience, skills, projects, leadership, achievements, contact.
+2. **`html/translations.js`** — the `translations` object with `en` and `es` trees. The inline `updateContent(lang)` function in index.html overwrites section text from this object on page load and on language toggle.
+
+When editing content, always update the HTML **and** both language trees in translations.js, or the language toggle will show stale text. `updateContent` indexes elements positionally (nav links, timeline entries, experience cards, badges, skill/tech tags), so adding or removing elements requires matching updates to that function and to both translation trees.
 
 ## Deployment Notes
 
