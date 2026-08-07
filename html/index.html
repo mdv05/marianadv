@@ -30,13 +30,18 @@
         :root {
             --primary: #00B4D8;
             --primary-dark: #0077B6;
+            --primary-hover: #005F8F;
             --accent: #90E0EF;
             --warm: #FFB700;
             --text-dark: #03045E;
-            --text-light: #666;
-            --bg-cream: #FAF8F3;
+            --text-light: #5B6472;
+            --bg-cream: #F7F6F3;
             --bg-white: #FFFFFF;
-            --border-light: #E5DDD0;
+            --border-light: #E8E3D9;
+            --radius: 14px;
+            --shadow-sm: 0 1px 2px rgba(3, 4, 94, 0.04);
+            --shadow-md: 0 4px 12px rgba(3, 4, 94, 0.05), 0 12px 32px rgba(3, 4, 94, 0.06);
+            --shadow-lg: 0 8px 20px rgba(3, 4, 94, 0.07), 0 24px 48px rgba(3, 4, 94, 0.10);
             --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --gradient-2: linear-gradient(135deg, #00B4D8 0%, #0077B6 100%);
             --gradient-3: linear-gradient(135deg, #FFB700 0%, #FF6B35 100%);
@@ -85,12 +90,12 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: var(--primary);
+            background: var(--primary-dark);
             border-radius: 5px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-dark);
+            background: var(--primary-hover);
         }
 
         /* Header */
@@ -98,7 +103,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(250, 248, 243, 0.82);
+            background: rgba(247, 246, 243, 0.82);
             backdrop-filter: blur(16px) saturate(180%);
             -webkit-backdrop-filter: blur(16px) saturate(180%);
             border-bottom: 1px solid rgba(3, 4, 94, 0.05);
@@ -226,28 +231,36 @@
 
         /* Language Toggle Specific */
         #langToggle {
-            background: linear-gradient(135deg, #00B4D8 0%, #0077B6 100%);
+            background: var(--primary-dark);
             color: white;
             border: none;
         }
 
         #langToggle:hover {
+            background: var(--primary-hover);
             box-shadow: 0 5px 20px rgba(0, 180, 216, 0.4);
         }
 
+        /* Mobile Nav Toggle */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+            border-radius: 8px;
+            transition: color 0.3s ease;
+        }
 
-        @media (max-width: 768px) {
-            .toggle-buttons {
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                flex-direction: column;
-                z-index: 1000;
-            }
-            
-            .toggle-btn {
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            }
+        .nav-toggle:hover {
+            color: var(--primary-dark);
+        }
+
+        .nav-toggle svg {
+            width: 24px;
+            height: 24px;
+            display: block;
         }
 
         /* Hero Section */
@@ -299,10 +312,7 @@
             font-size: clamp(3.5rem, 6vw, 5rem);
             font-weight: 900;
             line-height: 1;
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-dark);
             margin-bottom: 1.5rem;
             letter-spacing: -0.02em;
         }
@@ -331,10 +341,7 @@
         .hero-stat-number {
             font-size: 2.5rem;
             font-weight: 700;
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary-dark);
         }
 
         .hero-stat-label {
@@ -352,13 +359,13 @@
         }
 
         .btn {
-            padding: 1rem 2rem;
-            font-size: 0.875rem;
+            padding: 0.875rem 1.75rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+            text-transform: none;
+            letter-spacing: 0.01em;
             border: none;
-            border-radius: 50px;
+            border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
@@ -366,26 +373,27 @@
         }
 
         .btn-primary {
-            background: var(--gradient-2);
+            background: var(--primary-dark);
             color: white;
-            box-shadow: 0 10px 30px rgba(0, 180, 216, 0.3);
+            box-shadow: var(--shadow-md);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 180, 216, 0.4);
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
         }
 
         .btn-outline {
             background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
+            color: var(--primary-dark);
+            border: 1.5px solid var(--primary-dark);
         }
 
         .btn-outline:hover {
-            background: var(--primary);
+            background: var(--primary-dark);
             color: white;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
         .btn:active {
@@ -464,7 +472,7 @@
         .floating-element {
             position: absolute;
             border-radius: 50%;
-            opacity: 0.1;
+            opacity: 0.05;
             animation: float 6s ease-in-out infinite;
         }
 
@@ -474,8 +482,8 @@
         }
 
         .float-1 {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             background: var(--primary);
             top: 20%;
             right: 10%;
@@ -483,8 +491,8 @@
         }
 
         .float-2 {
-            width: 60px;
-            height: 60px;
+            width: 48px;
+            height: 48px;
             background: var(--warm);
             bottom: 20%;
             left: 10%;
@@ -492,8 +500,8 @@
         }
 
         .float-3 {
-            width: 80px;
-            height: 80px;
+            width: 64px;
+            height: 64px;
             background: var(--accent);
             top: 60%;
             right: 30%;
@@ -523,7 +531,7 @@
 
         .section-title {
             font-size: 3rem;
-            font-weight: 900;
+            font-weight: 700;
             color: var(--text-dark);
             margin-bottom: 1rem;
         }
@@ -605,12 +613,12 @@
         .skill-card-icon {
             width: 40px;
             height: 40px;
-            background: var(--gradient-2);
+            background: rgba(0, 119, 182, 0.08);
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--primary-dark);
             font-size: 1.25rem;
             margin-bottom: 1rem;
         }
@@ -677,13 +685,13 @@
             background: white;
             border: 1px solid rgba(3, 4, 94, 0.06);
             border-radius: 16px;
-            box-shadow: 0 1px 2px rgba(3, 4, 94, 0.03), 0 12px 32px rgba(3, 4, 94, 0.06);
+            box-shadow: var(--shadow-sm);
             transition: all 0.3s ease;
         }
 
         .timeline-content:hover {
             transform: translateY(-5px);
-            box-shadow: 0 4px 12px rgba(3, 4, 94, 0.05), 0 22px 44px rgba(3, 4, 94, 0.1);
+            box-shadow: var(--shadow-lg);
         }
 
         .timeline-logo {
@@ -750,8 +758,9 @@
 
         .achievement-badge {
             padding: 0.25rem 0.75rem;
-            background: var(--gradient-2);
-            color: white;
+            background: rgba(0, 119, 182, 0.08);
+            color: var(--primary-dark);
+            border: 1px solid rgba(0, 119, 182, 0.15);
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 600;
@@ -775,7 +784,7 @@
             background: white;
             border: 1px solid rgba(3, 4, 94, 0.06);
             border-radius: 20px;
-            box-shadow: 0 1px 2px rgba(3, 4, 94, 0.03), 0 12px 32px rgba(3, 4, 94, 0.06);
+            box-shadow: var(--shadow-sm);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: default;
             position: relative;
@@ -789,23 +798,23 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: var(--gradient-2);
+            background: var(--primary-dark);
         }
 
         .experience-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 6px 16px rgba(3, 4, 94, 0.06), 0 28px 56px rgba(3, 4, 94, 0.13);
+            box-shadow: var(--shadow-lg);
         }
 
         .experience-logo {
             width: 60px;
             height: 60px;
-            background: var(--gradient-2);
+            background: rgba(0, 119, 182, 0.08);
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--primary-dark);
             font-weight: bold;
             font-size: 1.25rem;
             margin-bottom: 1.5rem;
@@ -874,11 +883,13 @@
         }
 
         .experience-logo.ola-logo {
-            background: var(--gradient-3);
+            background: rgba(0, 119, 182, 0.08);
+            color: var(--primary-dark);
         }
 
         .experience-logo.vsa-logo {
-            background: var(--gradient-1);
+            background: rgba(0, 119, 182, 0.08);
+            color: var(--primary-dark);
         }
 
         .experience-company {
@@ -941,26 +952,26 @@
             padding: 2rem;
             border: 1px solid rgba(3, 4, 94, 0.06);
             border-radius: 16px;
-            box-shadow: 0 1px 2px rgba(3, 4, 94, 0.03), 0 12px 30px rgba(3, 4, 94, 0.05);
+            box-shadow: var(--shadow-sm);
             transition: all 0.3s ease;
         }
 
         .skill-group:hover {
             transform: translateY(-5px);
-            box-shadow: 0 4px 12px rgba(3, 4, 94, 0.05), 0 18px 40px rgba(3, 4, 94, 0.1);
+            box-shadow: var(--shadow-lg);
         }
 
         .skill-group-icon {
             width: 50px;
             height: 50px;
-            background: var(--gradient-2);
+            background: rgba(0, 119, 182, 0.08);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
-            color: white;
+            color: var(--primary-dark);
         }
 
         .skill-group-title {
@@ -988,9 +999,9 @@
         }
 
         .skill-pill:hover {
-            background: var(--gradient-2);
-            color: white;
-            transform: scale(1.05);
+            background: rgba(0, 180, 216, 0.12);
+            color: var(--primary-dark);
+            transform: translateY(-1px);
         }
 
         /* Projects Section */
@@ -1011,19 +1022,35 @@
             border: 1px solid rgba(3, 4, 94, 0.06);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 1px 2px rgba(3, 4, 94, 0.03), 0 12px 32px rgba(3, 4, 94, 0.06);
+            box-shadow: var(--shadow-sm);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             position: relative;
         }
-        
+
         .project-card:first-child {
             overflow: visible;
         }
 
         .project-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 6px 16px rgba(3, 4, 94, 0.06), 0 28px 56px rgba(3, 4, 94, 0.13);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: linear-gradient(135deg, #FF6B35 0%, #FFB700 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
         }
 
         .project-image {
@@ -1053,6 +1080,272 @@
 
         .project-card:hover .project-image::after {
             opacity: 1;
+        }
+
+        /* Project mockups */
+        .project-mockup {
+            flex-direction: column;
+            padding: 25px 20px;
+        }
+
+        .pm-futurescope {
+            background: white;
+            padding: 30px 20px;
+        }
+
+        .pm-retirehub {
+            background: #425577;
+        }
+
+        .pm-retirechat {
+            background: linear-gradient(135deg, #00B4D8 0%, #0077B6 100%);
+            padding: 20px;
+        }
+
+        .pm-goldenson {
+            background: #1a1a3e;
+            flex-direction: row;
+            padding: 20px;
+        }
+
+        .mock-inner {
+            text-align: center;
+            width: 90%;
+            max-width: 300px;
+        }
+
+        .mock-inner-light {
+            color: white;
+        }
+
+        /* FutureScope mockup */
+        .mock-brand {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .mock-brand-blue {
+            color: #4285F4;
+        }
+
+        .mock-brand-teal {
+            color: #00ACC1;
+        }
+
+        .mock-subtitle {
+            color: #333;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .mock-caption {
+            color: #666;
+            font-size: 0.6rem;
+            line-height: 1.4;
+        }
+
+        /* RetireHub mockup */
+        .mock-logo-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .mock-triangle {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #4DD0E1 0%, #00ACC1 100%);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            transform: rotate(180deg);
+        }
+
+        .mock-company {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .mock-headline {
+            font-size: 1rem;
+            line-height: 1.3;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .mock-tagline {
+            font-size: 0.65rem;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        /* RetireChat mockup */
+        .mock-chat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            width: 85%;
+            max-width: 260px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .mock-chat-title {
+            color: #0077B6;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .mock-chat-text {
+            color: #555;
+            font-size: 0.75rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Goldenson phone mockups */
+        .mock-phones {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mock-phone {
+            background: #2d2d5e;
+            border: 3px solid #666;
+            border-radius: 20px;
+            padding: 15px;
+            width: 140px;
+        }
+
+        .mock-phone-hero {
+            background: #a8b3e3;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 10px;
+        }
+
+        .mock-phone-hero-inner {
+            text-align: center;
+        }
+
+        .mock-icon {
+            display: flex;
+            justify-content: center;
+        }
+
+        .mock-icon svg {
+            display: block;
+        }
+
+        .mock-icon-dollar {
+            color: #1a1a3e;
+            margin-bottom: 4px;
+        }
+
+        .mock-icon-dollar svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .mock-icon-home {
+            color: #a8b3e3;
+            margin: 15px 0;
+        }
+
+        .mock-icon-home svg {
+            width: 34px;
+            height: 34px;
+        }
+
+        .mock-phone-title {
+            color: #1a1a3e;
+            font-size: 0.6rem;
+            font-weight: 600;
+        }
+
+        .mock-phone-sub {
+            color: #1a1a3e;
+            font-size: 0.5rem;
+        }
+
+        .mock-phone-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .mock-tab {
+            background: white;
+            border-radius: 5px;
+            padding: 8px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .mock-tab-alt {
+            background: #b8c3e8;
+        }
+
+        .mock-tab-text {
+            color: #1a1a3e;
+            font-size: 0.5rem;
+            font-weight: 500;
+        }
+
+        .mock-phone-cta {
+            background: #f5d571;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .mock-phone-cta-text {
+            color: #1a1a3e;
+            font-size: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .mock-panel {
+            background: white;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 10px;
+        }
+
+        .mock-banner {
+            background: #6fa8dc;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .mock-banner-sm {
+            padding: 8px;
+        }
+
+        .mock-banner-text {
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 600;
+        }
+
+        .mock-banner-text-sm {
+            font-size: 0.5rem;
+            text-align: center;
+        }
+
+        .mock-phone-footer {
+            color: white;
+            font-size: 0.4rem;
+            text-align: center;
+            margin-top: 8px;
         }
 
         .project-content {
@@ -1128,7 +1421,7 @@
         /* Achievements Section */
         .achievements {
             padding: 100px 0;
-            background: var(--gradient-2);
+            background: var(--text-dark);
             color: white;
             text-align: center;
         }
@@ -1148,6 +1441,7 @@
             font-size: 3.5rem;
             font-weight: 900;
             margin-bottom: 1rem;
+            color: var(--accent);
         }
 
         .achievement-label {
@@ -1170,10 +1464,7 @@
         .contact-title {
             font-size: 3.5rem;
             font-weight: 900;
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-dark);
             margin-bottom: 2rem;
         }
 
@@ -1195,14 +1486,14 @@
             background: white;
             border: 1px solid rgba(3, 4, 94, 0.06);
             border-radius: 16px;
-            box-shadow: 0 1px 2px rgba(3, 4, 94, 0.03), 0 12px 30px rgba(3, 4, 94, 0.05);
+            box-shadow: var(--shadow-sm);
             transition: all 0.3s ease;
             cursor: pointer;
         }
 
         .contact-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 4px 12px rgba(3, 4, 94, 0.05), 0 18px 40px rgba(3, 4, 94, 0.1);
+            box-shadow: var(--shadow-lg);
         }
 
         .contact-card:hover .contact-icon {
@@ -1212,13 +1503,13 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: var(--gradient-2);
+            background: rgba(0, 119, 182, 0.08);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1rem;
-            color: white;
+            color: var(--primary-dark);
             font-size: 1.25rem;
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -1368,7 +1659,38 @@
                 left: 0;
             }
 
+            .nav-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
             .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                display: none;
+                flex-direction: column;
+                gap: 0;
+                background: rgba(247, 246, 243, 0.97);
+                backdrop-filter: blur(16px) saturate(180%);
+                -webkit-backdrop-filter: blur(16px) saturate(180%);
+                border-bottom: 1px solid var(--border-light);
+                box-shadow: var(--shadow-md);
+                padding: 0.5rem 20px 1rem;
+            }
+
+            header.nav-open .nav-links {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 1rem 0;
+            }
+
+            .nav-links a::before {
                 display: none;
             }
 
@@ -1542,6 +1864,9 @@
                     <li><a href="#leadership" data-en="Leadership" data-es="Liderazgo">Leadership</a></li>
                     <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
                 </ul>
+                <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
                 <div class="toggle-buttons">
                     <button class="toggle-btn" id="langToggle" onclick="toggleLanguage()">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
@@ -1861,17 +2186,17 @@
             </div>
             <div class="projects-grid">
                 <!-- NEWEST: FutureScope -->
-                <div class="project-card" style="position: relative;">
-                    <div style="position: absolute; top: -10px; right: 20px; background: linear-gradient(135deg, #FF6B35 0%, #FFB700 100%); color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; z-index: 10; box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);">
+                <div class="project-card">
+                    <div class="project-badge">
                         LATEST ADDITION
                     </div>
-                    <div class="project-image" style="background: white; padding: 30px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                        <div style="text-align: center; width: 90%; max-width: 300px;">
-                            <h4 style="font-size: 1.8rem; margin-bottom: 8px; font-weight: 700; letter-spacing: -0.5px; font-family: 'Inter', sans-serif;">
-                                <span style="color: #4285F4;">Future</span><span style="color: #4285F4;">S</span><span style="color: #00ACC1;">cope</span>
+                    <div class="project-image project-mockup pm-futurescope">
+                        <div class="mock-inner">
+                            <h4 class="mock-brand">
+                                <span class="mock-brand-blue">Future</span><span class="mock-brand-blue">S</span><span class="mock-brand-teal">cope</span>
                             </h4>
-                            <h5 style="color: #333; font-size: 0.85rem; font-weight: 500; margin-bottom: 10px;">Financial Projection Calculator</h5>
-                            <p style="color: #666; font-size: 0.6rem; line-height: 1.4;">Professional retirement planning with institutional-grade projections and analysis</p>
+                            <h5 class="mock-subtitle">Financial Projection Calculator</h5>
+                            <p class="mock-caption">Professional retirement planning with institutional-grade projections and analysis</p>
                         </div>
                     </div>
                     <div class="project-content">
@@ -1890,14 +2215,14 @@
                 </div>
                 <!-- RetireHub -->
                 <div class="project-card">
-                    <div class="project-image" style="background: #425577; padding: 25px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                        <div style="text-align: center; color: white; width: 90%; max-width: 300px;">
-                            <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 15px;">
-                                <div style="width: 30px; height: 30px; background: linear-gradient(135deg, #4DD0E1 0%, #00ACC1 100%); clip-path: polygon(50% 0%, 0% 100%, 100% 100%); transform: rotate(180deg);"></div>
-                                <span style="font-size: 0.9rem; font-weight: 600; color: white;">Company123 RetireHub</span>
+                    <div class="project-image project-mockup pm-retirehub">
+                        <div class="mock-inner mock-inner-light">
+                            <div class="mock-logo-row">
+                                <div class="mock-triangle"></div>
+                                <span class="mock-company">Company123 RetireHub</span>
                             </div>
-                            <h5 style="font-size: 1rem; line-height: 1.3; margin-bottom: 10px; font-weight: 400;">Benefits and HR Consulting</h5>
-                            <p style="font-size: 0.65rem; opacity: 0.9; line-height: 1.4;">Personalized retirement planning solutions</p>
+                            <h5 class="mock-headline">Benefits and HR Consulting</h5>
+                            <p class="mock-tagline">Personalized retirement planning solutions</p>
                         </div>
                     </div>
                     <div class="project-content">
@@ -1916,10 +2241,10 @@
                 </div>
                 <!-- RetireChat -->
                 <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #00B4D8 0%, #0077B6 100%); padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                        <div style="background: white; border-radius: 12px; padding: 20px; width: 85%; max-width: 260px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
-                            <h4 style="color: #0077B6; font-size: 1.3rem; margin-bottom: 10px; font-weight: 700;">RetireChat</h4>
-                            <p style="color: #555; font-size: 0.75rem; line-height: 1.5; margin: 0;">AI-Powered Retirement Planning Assistant</p>
+                    <div class="project-image project-mockup pm-retirechat">
+                        <div class="mock-chat-card">
+                            <h4 class="mock-chat-title">RetireChat</h4>
+                            <p class="mock-chat-text">AI-Powered Retirement Planning Assistant</p>
                         </div>
                     </div>
                     <div class="project-content">
@@ -1938,43 +2263,41 @@
                 </div>
                 <!-- OLDEST: Goldenson -->
                 <div class="project-card">
-                    <div class="project-image" style="background: #1a1a3e; padding: 20px; display: flex; align-items: center; justify-content: center;">
-                        <div style="display: flex; gap: 15px; align-items: center; justify-content: center;">
+                    <div class="project-image project-mockup pm-goldenson">
+                        <div class="mock-phones">
                             <!-- Left Phone -->
-                            <div style="background: #2d2d5e; border: 3px solid #666; border-radius: 20px; padding: 15px; width: 140px;">
-                                <div style="background: #a8b3e3; border-radius: 10px; padding: 12px; margin-bottom: 10px;">
-                                    <div style="text-align: center;">
-                                        <div style="font-size: 1.2rem; margin-bottom: 4px;">💲</div>
-                                        <div style="color: #1a1a3e; font-size: 0.6rem; font-weight: 600;">MyCoverage</div>
-                                        <div style="color: #1a1a3e; font-size: 0.5rem;">Flexible Insurance Coverage</div>
+                            <div class="mock-phone">
+                                <div class="mock-phone-hero">
+                                    <div class="mock-phone-hero-inner">
+                                        <div class="mock-icon mock-icon-dollar"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="6" x2="12" y2="18"/><path d="M15.5 9.5H10a2.25 2.25 0 0 0 0 4.5h4a2.25 2.25 0 0 1 0 4.5H8.5"/></svg></div>
+                                        <div class="mock-phone-title">MyCoverage</div>
+                                        <div class="mock-phone-sub">Flexible Insurance Coverage</div>
                                     </div>
                                 </div>
-                                <div style="display: flex; gap: 8px; margin-bottom: 10px;">
-                                    <div style="background: white; border-radius: 5px; padding: 8px; flex: 1; text-align: center;">
-                                        <div style="color: #1a1a3e; font-size: 0.5rem; font-weight: 500;">Client Info</div>
+                                <div class="mock-phone-tabs">
+                                    <div class="mock-tab">
+                                        <div class="mock-tab-text">Client Info</div>
                                     </div>
-                                    <div style="background: #b8c3e8; border-radius: 5px; padding: 8px; flex: 1; text-align: center;">
-                                        <div style="color: #1a1a3e; font-size: 0.5rem; font-weight: 500;">Explore</div>
+                                    <div class="mock-tab mock-tab-alt">
+                                        <div class="mock-tab-text">Explore</div>
                                     </div>
                                 </div>
-                                <div style="background: #f5d571; border-radius: 8px; padding: 10px;">
-                                    <div style="color: #1a1a3e; font-size: 0.5rem; font-weight: 600; text-align: center;">Purchase a Plan</div>
+                                <div class="mock-phone-cta">
+                                    <div class="mock-phone-cta-text">Purchase a Plan</div>
                                 </div>
                             </div>
                             <!-- Right Phone -->
-                            <div style="background: #2d2d5e; border: 3px solid #666; border-radius: 20px; padding: 15px; width: 140px;">
-                                <div style="background: white; border-radius: 10px; padding: 12px; margin-bottom: 10px;">
-                                    <div style="background: #6fa8dc; border-radius: 8px; padding: 10px; text-align: center;">
-                                        <div style="color: white; font-size: 0.6rem; font-weight: 600;">Current Coverages</div>
+                            <div class="mock-phone">
+                                <div class="mock-panel">
+                                    <div class="mock-banner">
+                                        <div class="mock-banner-text">Current Coverages</div>
                                     </div>
                                 </div>
-                                <div style="text-align: center; margin: 15px 0;">
-                                    <div style="font-size: 2rem;">🏠</div>
+                                <div class="mock-icon mock-icon-home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                                <div class="mock-banner mock-banner-sm">
+                                    <div class="mock-banner-text mock-banner-text-sm">Contact Us</div>
                                 </div>
-                                <div style="background: #6fa8dc; border-radius: 8px; padding: 8px;">
-                                    <div style="color: white; font-size: 0.5rem; font-weight: 600; text-align: center;">Contact Us</div>
-                                </div>
-                                <div style="color: white; font-size: 0.4rem; text-align: center; margin-top: 8px;">Goldenson</div>
+                                <div class="mock-phone-footer">Goldenson</div>
                             </div>
                         </div>
                     </div>
@@ -2141,6 +2464,30 @@
             });
         });
 
+        // Mobile navigation
+        const navToggle = document.querySelector('.nav-toggle');
+        const siteHeader = document.querySelector('header');
+
+        if (navToggle && siteHeader) {
+            const closeNav = () => {
+                siteHeader.classList.remove('nav-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            };
+
+            navToggle.addEventListener('click', () => {
+                const isOpen = siteHeader.classList.toggle('nav-open');
+                navToggle.setAttribute('aria-expanded', String(isOpen));
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', closeNav);
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) closeNav();
+            });
+        }
+
         // Header scroll effect, reading progress, back-to-top, and nav highlighting
         let lastScroll = 0;
         const progressBar = document.querySelector('.scroll-progress-bar');
@@ -2245,41 +2592,46 @@
         // Custom cursor
         const cursorDot = document.querySelector('.cursor-dot');
         const cursorOutline = document.querySelector('.cursor-outline');
+        const finePointer = !!(window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches);
 
-        window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
-            
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
-            
-            cursorOutline.style.left = `${posX}px`;
-            cursorOutline.style.top = `${posY}px`;
-        });
+        if (finePointer && !prefersReducedMotion) {
+            window.addEventListener('mousemove', (e) => {
+                const posX = e.clientX;
+                const posY = e.clientY;
 
-        // Cursor hover effects
-        const hoverElements = document.querySelectorAll('a, button, .btn, .project-card, .experience-card, .contact-card');
-        hoverElements.forEach(elem => {
-            elem.addEventListener('mouseenter', () => {
-                cursorDot.style.transform = 'scale(2)';
-                cursorOutline.style.transform = 'scale(1.5)';
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
+
+                cursorOutline.style.left = `${posX}px`;
+                cursorOutline.style.top = `${posY}px`;
             });
-            elem.addEventListener('mouseleave', () => {
-                cursorDot.style.transform = 'scale(1)';
-                cursorOutline.style.transform = 'scale(1)';
+
+            // Cursor hover effects
+            const hoverElements = document.querySelectorAll('a, button, .btn, .project-card, .experience-card, .contact-card');
+            hoverElements.forEach(elem => {
+                elem.addEventListener('mouseenter', () => {
+                    cursorDot.style.transform = 'scale(2)';
+                    cursorOutline.style.transform = 'scale(1.5)';
+                });
+                elem.addEventListener('mouseleave', () => {
+                    cursorDot.style.transform = 'scale(1)';
+                    cursorOutline.style.transform = 'scale(1)';
+                });
             });
-        });
+        }
 
         // Parallax effect for floating elements
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const floats = document.querySelectorAll('.floating-element');
-            
-            floats.forEach((float, index) => {
-                const speed = 0.5 + index * 0.1;
-                float.style.transform = `translateY(${scrolled * speed}px)`;
+        if (!prefersReducedMotion) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const floats = document.querySelectorAll('.floating-element');
+
+                floats.forEach((float, index) => {
+                    const speed = 0.5 + index * 0.1;
+                    float.style.transform = `translateY(${scrolled * speed}px)`;
+                });
             });
-        });
+        }
 
         // Dynamic year in footer
         const year = new Date().getFullYear();
