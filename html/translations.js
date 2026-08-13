@@ -138,7 +138,7 @@ const translations = {
             chatbot: {
                 title: "RetireChat: AI Retirement Chatbot",
                 desc: "A conversational AI tool I built for our Segal intern project to help people early in their careers start thinking about retirement. It answers planning questions in plain language through a simple web app.",
-                link: "View Live Demo →",
+                link: "View Code →",
                 tech: ["Python", "React", "Google Cloud", "Gen AI"]
             },
             goldenson: {
@@ -351,7 +351,7 @@ const translations = {
             chatbot: {
                 title: "RetireChat: Chatbot de Retiro con IA",
                 desc: "Una herramienta de IA conversacional que construí para nuestro proyecto de internos en Segal, para ayudar a la gente joven a empezar a pensar en el retiro. Contesta preguntas de planificación en lenguaje sencillo a través de una app web simple.",
-                link: "Mira el Demo →",
+                link: "Mira el Código →",
                 tech: ["Python", "React", "Google Cloud", "IA Generativa"]
             },
             goldenson: {
