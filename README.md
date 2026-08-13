@@ -60,8 +60,8 @@ Visit the portfolio at: [marianadv.com](https://marianadv.com) *(or your configu
   - Content refresh from Summer 2026 resume (MassMutual internship, NUS study abroad, leadership section)
 
 ## 🎯 Current Focus
-- Actuarial Intern at MassMutual (Product Pricing & Assumption Oversight)
-- Sitting Actuarial Exam 2/FM (August 2026)
+- Seeking full-time actuarial roles for 2027 (completed Summer 2026 internship at MassMutual — Product Pricing & Assumption Oversight)
+- Pursuing actuarial exams
 - Developing innovative AI-powered retirement solutions
 
 ## 📫 Contact
