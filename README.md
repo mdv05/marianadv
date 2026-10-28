@@ -48,7 +48,7 @@ marianadv/
 ```
 
 ## 🌐 Live Website
-Visit the portfolio at: [marianadv.com](https://marianadv.com) *(or your configured domain)*
+Visit the portfolio at: [marianadv.com](https://marianadv.com)
 
 ## 📅 Timeline
 - **Project Start**: May 2024
@@ -60,7 +60,7 @@ Visit the portfolio at: [marianadv.com](https://marianadv.com) *(or your configu
   - Content refresh from Summer 2026 resume (MassMutual internship, NUS study abroad, leadership section)
 
 ## 🎯 Current Focus
-- Seeking full-time actuarial roles for 2027 (completed Summer 2026 internship at MassMutual — Product Pricing & Assumption Oversight)
+- Seeking full-time roles for 2027 (completed Summer 2026 internship at MassMutual — Product Pricing & Assumption Oversight)
 - Pursuing actuarial exams
 - Developing innovative AI-powered retirement solutions
 
