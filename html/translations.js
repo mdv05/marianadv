@@ -109,7 +109,7 @@ const translations = {
             },
             model: {
                 role: "Professional Model",
-                date: "September 2021 - Present | Rocky Hill, CT",
+                date: "September 2021 - Present | West Hartford, CT",
                 desc: "I model professionally alongside school, working with photographers and agencies on shoots. Balancing it with my coursework and other roles has made me better at managing my time and adjusting quickly in new settings.",
                 skills: ["Project Management", "Communication", "Time Management", "Professionalism"]
             },
@@ -322,7 +322,7 @@ const translations = {
             },
             model: {
                 role: "Modelo Profesional",
-                date: "Septiembre 2021 - Presente | Rocky Hill, CT",
+                date: "Septiembre 2021 - Presente | West Hartford, CT",
                 desc: "Modelo profesionalmente junto con la escuela, trabajando con fotógrafos y agencias en sesiones. Balancearlo con mis cursos y mis otros roles me ha hecho mejor manejando mi tiempo y adaptándome rápido a ambientes nuevos.",
                 skills: ["Manejo de Proyectos", "Comunicación", "Manejo del Tiempo", "Profesionalismo"]
             },
