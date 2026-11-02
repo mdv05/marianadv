@@ -43,12 +43,12 @@ The site automatically deploys via GitHub Actions when changes are pushed to the
 
 Single static page, hand-written HTML/CSS with a small inline script. No frameworks, no build step.
 
-- **Design:** editorial, text-first layout on a warm paper background. Newsreader (serif headings), IBM Plex Sans (body), IBM Plex Mono (small labels/tags). One accent color. Light and dark themes via `prefers-color-scheme`. Deliberately avoids gradients, glassmorphism, icon-card grids, count-up stats, and scroll animations.
-- **Sections (in order):** intro, About, Experience, Projects, Leadership, Education, Skills, Contact. Desktop uses a two-column section grid (label | content); it collapses to one column at 820px.
-- **Projects:** each has a screenshot thumbnail (`shot-*.jpg`, captured from the live apps) linking to the live demo. The Goldenson poster opens in a native `<dialog>`.
-- **Travel map (About):** inline SVG dot map generated from a land mask (one `<path>` of dots plus accent markers). Places list and caption live in `about.travel` in translations.js; update both if a trip is added. Only list places she has confirmed.
-- **Ribbon:** `.ribbon` inside `.shot.has-ribbon` marks the newest project (`projects.latest`). Move both classes when a newer project is added.
-- **Type scale:** body 16px, meta 14px, mono labels 12.5px, serif headings 21px. Keep new elements on this scale.
+- **Design:** ocean-blue palette (navy #03045e headings, blue #0069a3 links/buttons, cyan #00b4d8 accents, gold #ffb700 for the ribbon and home marker) on a cream background, alternating cream/white section bands. Playfair Display (headings, numbers) and Inter (everything else). Light and dark themes via `prefers-color-scheme`. Cards with company/school logos on white chips; skills and tags render as pills. No scroll animations or count-up stats.
+- **Sections (in order):** hero (stats + buttons), About (with travel map), Experience, Projects, Leadership, Education, Skills, Achievements band (navy), Contact. Each section has an eyebrow label + Playfair title from `<section>.label` / `<section>.title`.
+- **Projects:** a full-width featured card for the newest project, then a 2-column grid. Each card has a screenshot (`shot-*.jpg`, captured from the live apps) linking to the live demo. The Goldenson poster opens in a native `<dialog>`.
+- **Travel map (About):** inline SVG dot map generated from a land mask (one `<path>` of dots plus markers). Places list and caption live in `about.travel` in translations.js; update both if a trip is added. Only list places she has confirmed.
+- **Ribbon:** `.ribbon` inside `.shot.has-ribbon` on the `.project.featured` card marks the newest project (`projects.latest`). Move the card to the front and both classes when a newer project is added.
+- **Type scale:** body 16px, lede 18px, meta 14px, eyebrow labels 12.5px uppercase, pills 13px, card titles (h3) 20px Playfair. Keep new elements on this scale.
 - **Script:** language toggle, nav highlighting via IntersectionObserver, and the case-study dialog.
 
 ## Content Management
@@ -58,7 +58,7 @@ Content lives in TWO places that must be kept in sync:
 1. **`html/index.html`**: the default English text, with each translatable element tagged `data-i18n="path.in.translations"`.
 2. **`html/translations.js`**: the `translations` object with `en` and `es` trees.
 
-`updateContent(lang)` sets every `[data-i18n]` element's text from the matching path. Arrays (skills, tags) are joined with ` · ` or the element's `data-join` value. Adding content means adding the element with a `data-i18n` key AND the key in both language trees. The English markup must match the `en` tree exactly.
+`updateContent(lang)` sets every `[data-i18n]` element's text from the matching path. Arrays on a `<ul>` render as one `<li>` pill per item; other arrays are joined with ` · ` or the element's `data-join` value. Adding content means adding the element with a `data-i18n` key AND the key in both language trees. The English markup must match the `en` tree exactly.
 
 ## Deployment Notes
 
