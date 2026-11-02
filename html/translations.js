@@ -13,10 +13,10 @@ const translations = {
         // Hero Section
         hero: {
             subtitle: "Actuarial Science & Data Analytics",
-            description: "I'm an actuarial science student at UConn who likes working where math and technology meet. I just finished a 2026 actuarial internship at MassMutual on the Product Pricing team, and I'm now looking for full-time roles in actuarial and product work starting in 2027.",
+            description: "I'm an actuarial science student at UConn who likes working where math, data, and technology meet. I interned at MassMutual on the Product Pricing team this past summer, and I'm looking for full-time roles in actuarial, analytics, and product work starting in June 2027.",
             stats: {
                 gpa: "GPA",
-                experience: "Years Experience",
+                experience: "Internships",
                 graduation: "Graduation"
             },
             cta: {
@@ -29,25 +29,25 @@ const translations = {
             label: "About Me",
             title: "Math, Insurance, and the Tools I Build",
             subtitle: "Actuarial work, data, and the tools I like to build.",
-            text1: "I'm a Math and Actuarial Science student at the University of Connecticut. I'm open to any actuarial track because I genuinely love learning, and what I value most is being somewhere that invests in my growth and gives me a lot to learn.",
-            highlight: "This past summer I interned at MassMutual on the Product Pricing team, where I got my first real look at the life insurance business. I'm now studying for my actuarial exams and looking for full-time roles in actuarial and product work starting in 2027.",
-            text2: "Along the way I spent a semester abroad at the National University of Singapore and interned at MassMutual and Segal. Outside of class and work, I model professionally, which has taught me a lot about managing my time and staying calm under pressure.",
+            text1: "I'm a Math and Actuarial Science student at the University of Connecticut, graduating in May 2027. What I enjoy most is finding out why a number changed and explaining it simply, whether it's in a pricing model, a pension valuation, or a tool I built myself.",
+            highlight: "At MassMutual, I enhanced the tool that explains why each product's planned profitability changed from one plan to the next, and I traced a product that wasn't flowing through it back to a single lookup formula.",
+            text2: "Before that, I interned at Segal in retirement consulting and spent a semester at the National University of Singapore. Outside of class and work, I model professionally, which has taught me a lot about managing my time and staying calm under pressure.",
             cards: {
                 data: {
                     title: "Data Analytics",
-                    desc: "Modeling and analysis in Python, R, and Excel"
+                    desc: "Excel, VBA, Python, and R, from validating data to building dashboards"
                 },
                 ai: {
-                    title: "AI Innovation",
-                    desc: "Comfortable building with Claude, ChatGPT, and other generative AI tools"
+                    title: "Building Tools",
+                    desc: "Designing and shipping small apps with Python, React, and generative AI"
                 },
                 actuarial: {
                     title: "Actuarial Science",
-                    desc: "Studying for my actuarial exams, with experience in product pricing, valuation, and risk"
+                    desc: "Product pricing, pension valuation, and gain/loss analysis, with Exam FM in December 2026"
                 },
                 leadership: {
                     title: "Leadership",
-                    desc: "Officer and committee roles with OLA, the UConn Actuarial Society, and VSA"
+                    desc: "Leading a 16-member committee at UAS, plus roles with OLA and VSA"
                 }
             }
         },
@@ -62,7 +62,7 @@ const translations = {
                 description: "University of Connecticut, Storrs",
                 gpa: "GPA: 3.53/4.0",
                 badges: {
-                    exam: "Actuarial Exam Track",
+                    exam: "Exam FM: December 2026",
                     veeEcon: "VEE Economics",
                     veeAcct: "VEE Accounting",
                     honors: "Honors Program"
@@ -98,14 +98,14 @@ const translations = {
             massmutual: {
                 role: "Actuarial Intern | Product Pricing & Assumption Oversight",
                 date: "May 2026 - August 2026 | Boston, MA",
-                desc: "I enhanced the Excel/VBA tool behind MassMutual's Value of New Business (VNB) plan, which breaks down what drives changes in planned profitability across 17 product lines. I met with the pricing teams to learn how they calculate their numbers and shaped the tool around their input. I also found why one product's data wasn't flowing downstream (a lookup that only returned its first match) and rebuilt the lookups so new products flow through automatically. I presented the changes to actuaries and senior leaders and rebuilt the quarterly VNB reporting deck for executive leadership so it populates instantly.",
-                skills: ["Excel", "VBA", "Product Pricing", "Automation", "Data Visualization"]
+                desc: "I enhanced the Excel/VBA tool that breaks down what drove changes in MassMutual's planned profitability (Value of New Business) from one plan to the next, across 17 product lines. I met with the pricing teams that submit data to it and shaped the tool around how they work, replacing months of manual adjustment with a repeatable workflow. I also traced why one product's data wasn't flowing downstream to a lookup that only returned its first match, and rebuilt the lookups so new products flow through automatically. I presented the changes to actuaries and senior leaders, rebuilt the executive VNB deck so it populates instantly, and won the intern case competition with a five-person team by designing an NIL annuity for student-athletes.",
+                skills: ["Excel", "VBA", "Data Validation", "Automation", "Product Pricing"]
             },
             segal: {
-                role: "Actuarial Intern",
+                role: "Actuarial Intern | Retirement Consulting",
                 date: "May 2025 - August 2025 | Farmington, CT",
-                desc: "I spearheaded our intern group project, setting deadlines and driving the vision, and it ended up winning that summer: a retirement dashboard (RetireHub) paired with a generative-AI chatbot (RetireChat). Alongside that, I supported the actuaries on valuation work, gain/loss analysis, benefit calculations, and government filings.",
-                skills: ["Python", "React", "Google Cloud", "AI Development", "Data Analysis"]
+                desc: "I ran pension valuation roll-forwards and gain/loss analysis for multiemployer clients, loading and validating plan data and explaining why actual results differed from what was expected. I also assisted credentialed actuaries on annual government filings. Alongside that, I spearheaded our intern group project, setting deadlines and driving the vision, and it won that summer: a retirement dashboard (RetireHub) paired with a generative-AI chatbot (RetireChat).",
+                skills: ["Pension Valuation", "Gain/Loss Analysis", "Data Validation", "Team Leadership", "Python"]
             },
             model: {
                 role: "Professional Model",
@@ -137,7 +137,7 @@ const translations = {
             title: "Featured Work",
             chatbot: {
                 title: "RetireChat: AI Retirement Chatbot",
-                desc: "A conversational AI tool I built for our Segal intern project to help people early in their careers start thinking about retirement. It answers planning questions in plain language through a simple web app.",
+                desc: "A conversational AI tool from our winning Segal intern project, made to help people early in their careers start thinking about retirement. It answers planning questions in plain language through a simple web app.",
                 link: "View Live Demo →",
                 tech: ["Python", "Streamlit", "Gemini API", "Gen AI"]
             },
@@ -153,11 +153,17 @@ const translations = {
                 link: "View Live Platform →",
                 tech: ["JavaScript", "Bootstrap", "Firebase", "Actuarial Models"]
             },
+            earnings: {
+                title: "Earnings Outlook: Creator Income Planning Prototype",
+                desc: "I framed a product gap using Roblox's published creator payout data and built a Python/Streamlit prototype on sample data. It projects a creator's next 90 days of earnings as a Monte Carlo range and uses actuarial credibility weighting so new creators with little history still get a stable estimate, shown as a plain confidence label.",
+                link: "View Live Prototype →",
+                tech: ["Python", "Streamlit", "Monte Carlo Simulation", "Credibility Weighting"]
+            },
             futurescope: {
                 title: "FutureScope: Retirement Planning Web App",
-                desc: "A retirement projection calculator I built using Monte Carlo simulation, compound interest, and inflation-adjusted present value, so people can see a realistic range of long-term outcomes instead of a single guess.",
+                desc: "A retirement projection web app I built and deployed. It uses Monte Carlo simulation, compound growth, and inflation-adjusted present values so people can see a realistic range of long-term outcomes instead of a single guess.",
                 link: "View Live Calculator →",
-                tech: ["React", "TypeScript", "GitHub Pages", "Monte Carlo Simulation"]
+                tech: ["React", "GitHub Pages", "Monte Carlo Simulation", "Present Value"]
             }
         },
         // Leadership Section
@@ -167,24 +173,24 @@ const translations = {
             ola: {
                 role: "Pipeline Committee & Rising Leaders Program",
                 date: "September 2024 - Present | Remote",
-                desc: "I help get the word out about actuarial careers. I was a panelist at OLA's first national high school case competition and led outreach to 8,500 school counselors across the country about Desafiando el Riesgo and OLA's scholarships.",
-                skills: ["Outreach", "Public Speaking", "Mentorship"]
+                desc: "I help get the word out about actuarial careers. I organized an email campaign to more than 8,500 high school counselors across the country about Desafiando el Riesgo and OLA's scholarships, and I was a panelist at OLA's first Desafiando el Riesgo high school case competition.",
+                skills: ["Outreach", "Public Speaking", "Email Campaigns"]
             },
             uas: {
                 role: "VP of Member Development",
                 date: "September 2024 - Present | Storrs, CT",
-                desc: "I lead a 16-member committee that plans onboarding and professional-readiness workshops for underclassmen. Before that I ran fundraising for the society, using Excel to track member engagement and see what brought in the most profit, and I was Director of DEI and put together UAS's first DEI event with six affinity organizations.",
-                skills: ["Fundraising", "Excel Analytics", "DEI", "Strategy"]
+                desc: "Since September 2026, I've led a 16-member committee split into three teams: Engagement (our marketing), Peer Learning (public speaking and workshops), and Resources (educational materials for members). I also write our recruitment emails. Before that I was Director of Fundraising, running fundraisers that supported speaker events and member programming, and Director of DEI, where I organized UAS's first DEI event with six affinity organizations.",
+                skills: ["Team Leadership", "Marketing", "Fundraising", "DEI"]
             },
             vsa: {
                 role: "Co-Chief Financial Officer",
                 date: "September 2024 - December 2025 | Storrs, CT",
-                desc: "I set pricing for 240 or more units of merchandise we sold nationally, looking at our costs to land on prices that struck a middle ground: enough to help fund the organization while still staying student-friendly. Before that I was Co-Events Coordinator, running events every two weeks for 60 to 70 people.",
+                desc: "I priced 240+ units of nationally sold merchandise, using prior sales data to reset quantities and prices, and set four-figure budgets for projects like UConn Lunar New Year and our merch launch. Before that I was Co-Events Coordinator, running events every two weeks for 60 to 70 people.",
                 skills: ["Pricing Analysis", "Budgeting", "Event Planning"]
             },
             associations: {
                 label: "Also active in:",
-                items: ["ALPFA Member · Since 2024", "UConn Honors Program · Since 2023"]
+                items: ["ALPFA Member · Since 2024", "UConn Honors Program · Since 2023", "Spencer Scholar · Brown & Brown Grant · 2026"]
             }
         },
         // Achievements Section
@@ -192,15 +198,15 @@ const translations = {
             title: "Achievements & Impact",
             items: {
                 gpa: "GPA while balancing multiple roles",
-                internship: "Actuarial internships at MassMutual & Segal",
-                experience: "Years of professional experience",
+                internship: "Product lines covered by the VNB tool I enhanced at MassMutual",
+                experience: "High school counselors reached through OLA outreach",
                 languages: "Languages spoken fluently"
             }
         },
         // Contact Section
         contact: {
             title: "Let's Connect!",
-            description: "I'm always happy to talk about actuarial science, data, or anything I'm building. Feel free to reach out.",
+            description: "I'm always happy to talk about actuarial science, analytics, product, or anything I'm building. Feel free to reach out.",
             labels: {
                 email: "Email",
                 phone: "Phone",
@@ -226,10 +232,10 @@ const translations = {
         // Hero Section
         hero: {
             subtitle: "Ciencias Actuariales y Análisis de Datos",
-            description: "Soy estudiante de ciencias actuariales en UConn y me gusta trabajar donde se encuentran las matemáticas y la tecnología. Acabo de terminar un internado actuarial en MassMutual en el equipo de Product Pricing (2026), y ahora estoy buscando trabajo a tiempo completo en el área actuarial y de productos para 2027.",
+            description: "Soy estudiante de ciencias actuariales en UConn y me gusta trabajar donde se encuentran las matemáticas, los datos y la tecnología. Este verano hice mi internado en MassMutual en el equipo de Product Pricing, y estoy buscando trabajo a tiempo completo en el área actuarial, de análisis de datos y de productos a partir de junio de 2027.",
             stats: {
                 gpa: "Promedio",
-                experience: "Años de Experiencia",
+                experience: "Internados",
                 graduation: "Graduación"
             },
             cta: {
@@ -242,25 +248,25 @@ const translations = {
             label: "Sobre Mí",
             title: "Matemáticas, Seguros y las Herramientas que Construyo",
             subtitle: "Trabajo actuarial, datos y las herramientas que me gusta construir.",
-            text1: "Soy estudiante de Matemáticas y Ciencias Actuariales en la Universidad de Connecticut. Estoy abierta a cualquier área actuarial porque de verdad me encanta aprender, y lo que más valoro es estar en un lugar que invierta en mi crecimiento y donde tenga mucho que aprender.",
-            highlight: "Este verano hice mi internado en MassMutual en el equipo de Product Pricing, donde vi por primera vez de cerca el negocio de los seguros de vida. Ahora estoy estudiando para mis exámenes actuariales y buscando trabajo a tiempo completo en el área actuarial y de productos para 2027.",
-            text2: "Antes de eso hice un semestre de intercambio en la Universidad Nacional de Singapur y trabajé en MassMutual y Segal. Fuera de la escuela y el trabajo, modelo profesionalmente, lo cual me ha enseñado bastante sobre manejar mi tiempo y mantener la calma bajo presión.",
+            text1: "Soy estudiante de Matemáticas y Ciencias Actuariales en la Universidad de Connecticut y me gradúo en mayo de 2027. Lo que más disfruto es descubrir por qué cambió un número y explicarlo de forma sencilla, ya sea en un modelo de pricing, una valuación de pensiones o una herramienta que construí yo misma.",
+            highlight: "En MassMutual mejoré la herramienta que explica por qué cambió la rentabilidad planificada de cada producto de un plan al siguiente, y rastreé un producto que no fluía por ella hasta una sola fórmula de búsqueda.",
+            text2: "Antes de eso hice mi internado en Segal en consultoría de retiro y pasé un semestre en la Universidad Nacional de Singapur. Fuera de la escuela y el trabajo, modelo profesionalmente, lo cual me ha enseñado bastante sobre manejar mi tiempo y mantener la calma bajo presión.",
             cards: {
                 data: {
                     title: "Análisis de Datos",
-                    desc: "Modelado y análisis en Python, R y Excel"
+                    desc: "Excel, VBA, Python y R, desde validar datos hasta construir dashboards"
                 },
                 ai: {
-                    title: "Innovación con IA",
-                    desc: "Cómoda construyendo con Claude, ChatGPT y otras herramientas de IA generativa"
+                    title: "Construyendo Herramientas",
+                    desc: "Diseño y lanzo apps pequeñas con Python, React e IA generativa"
                 },
                 actuarial: {
                     title: "Ciencias Actuariales",
-                    desc: "Estudiando para mis exámenes actuariales, con experiencia en pricing de productos, valuación y riesgo"
+                    desc: "Pricing de productos, valuación de pensiones y análisis de ganancias y pérdidas, con el Examen FM en diciembre de 2026"
                 },
                 leadership: {
                     title: "Liderazgo",
-                    desc: "Roles de oficial y comités con OLA, la Sociedad Actuarial de UConn y VSA"
+                    desc: "Lidero un comité de 16 miembros en UAS, además de roles con OLA y VSA"
                 }
             }
         },
@@ -275,7 +281,7 @@ const translations = {
                 description: "Universidad de Connecticut, Storrs",
                 gpa: "GPA: 3.53/4.0",
                 badges: {
-                    exam: "Exámenes Actuariales",
+                    exam: "Examen FM: Diciembre 2026",
                     veeEcon: "VEE Economía",
                     veeAcct: "VEE Contabilidad",
                     honors: "Programa de Honores"
@@ -311,14 +317,14 @@ const translations = {
             massmutual: {
                 role: "Internado Actuarial | Pricing de Productos y Supervisión de Supuestos",
                 date: "Mayo 2026 - Agosto 2026 | Boston, MA",
-                desc: "Mejoré la herramienta de Excel/VBA detrás del plan del Valor de Nuevos Negocios (VNB) de MassMutual, que desglosa qué impulsa los cambios en la rentabilidad planificada en 17 líneas de productos. Me reuní con los equipos de pricing para entender cómo calculan sus números y diseñé la herramienta según sus comentarios. También descubrí por qué los datos de un producto no llegaban a los reportes (una búsqueda que solo devolvía la primera coincidencia) y reconstruí las búsquedas para que los productos nuevos fluyan automáticamente. Presenté los cambios a actuarios y líderes sénior y reconstruí el deck trimestral de VNB para el liderazgo ejecutivo para que se llene al instante.",
-                skills: ["Excel", "VBA", "Pricing de Productos", "Automatización", "Visualización de Datos"]
+                desc: "Mejoré la herramienta de Excel/VBA que desglosa qué impulsó los cambios en la rentabilidad planificada de MassMutual (Valor de Nuevos Negocios) de un plan al siguiente, en 17 líneas de productos. Me reuní con los equipos de pricing que le envían datos y diseñé la herramienta según su forma de trabajar, reemplazando meses de ajustes manuales con un proceso repetible. También rastreé por qué los datos de un producto no llegaban a los reportes hasta una búsqueda que solo devolvía la primera coincidencia, y reconstruí las búsquedas para que los productos nuevos fluyan automáticamente. Presenté los cambios a actuarios y líderes sénior, reconstruí el deck ejecutivo de VNB para que se llene al instante y gané la competencia de casos de los internos con un equipo de cinco personas diseñando una anualidad NIL para atletas estudiantiles.",
+                skills: ["Excel", "VBA", "Validación de Datos", "Automatización", "Pricing de Productos"]
             },
             segal: {
-                role: "Internado Actuarial",
+                role: "Internado Actuarial | Consultoría de Retiro",
                 date: "Mayo 2025 - Agosto 2025 | Farmington, CT",
-                desc: "Encabecé el proyecto de grupo de los internos, poniendo las fechas límite y dirigiendo la visión, y terminó ganando ese verano: un dashboard de retiro (RetireHub) junto a un chatbot de IA generativa (RetireChat). Además de eso, apoyé a los actuarios en trabajo de valuación, análisis de ganancias y pérdidas, cálculos de beneficios y radicaciones gubernamentales.",
-                skills: ["Python", "React", "Google Cloud", "Desarrollo IA", "Análisis de Datos"]
+                desc: "Hice roll-forwards de valuaciones de pensiones y análisis de ganancias y pérdidas para clientes multiempleador, cargando y validando los datos de los planes y explicando por qué los resultados reales fueron diferentes a lo esperado. También apoyé a actuarios acreditados en las radicaciones gubernamentales anuales. Además, encabecé el proyecto de grupo de los internos, poniendo las fechas límite y dirigiendo la visión, y ganó ese verano: un dashboard de retiro (RetireHub) junto a un chatbot de IA generativa (RetireChat).",
+                skills: ["Valuación de Pensiones", "Ganancias y Pérdidas", "Validación de Datos", "Liderazgo de Equipo", "Python"]
             },
             model: {
                 role: "Modelo Profesional",
@@ -350,7 +356,7 @@ const translations = {
             title: "Trabajo Destacado",
             chatbot: {
                 title: "RetireChat: Chatbot de Retiro con IA",
-                desc: "Una herramienta de IA conversacional que construí para nuestro proyecto de internos en Segal, para ayudar a la gente joven a empezar a pensar en el retiro. Contesta preguntas de planificación en lenguaje sencillo a través de una app web simple.",
+                desc: "Una herramienta de IA conversacional de nuestro proyecto ganador de internos en Segal, hecha para ayudar a la gente que empieza su carrera a pensar en el retiro. Contesta preguntas de planificación en lenguaje sencillo a través de una app web simple.",
                 link: "Mira el Demo →",
                 tech: ["Python", "Streamlit", "Gemini API", "IA Generativa"]
             },
@@ -366,11 +372,17 @@ const translations = {
                 link: "Mira la Plataforma →",
                 tech: ["JavaScript", "Bootstrap", "Firebase", "Modelos Actuariales"]
             },
+            earnings: {
+                title: "Earnings Outlook: Prototipo de Planificación de Ingresos para Creadores",
+                desc: "Definí una oportunidad de producto usando los datos publicados de pagos a creadores de Roblox y construí un prototipo en Python/Streamlit con datos de muestra. Proyecta las ganancias de un creador para los próximos 90 días como un rango Monte Carlo y usa ponderación de credibilidad actuarial para que los creadores nuevos, con poco historial, igual reciban un estimado estable, mostrado como una etiqueta de confianza sencilla.",
+                link: "Ver Prototipo →",
+                tech: ["Python", "Streamlit", "Simulación Monte Carlo", "Ponderación de Credibilidad"]
+            },
             futurescope: {
                 title: "FutureScope: App Web de Planificación de Retiro",
-                desc: "Una calculadora de proyección de retiro que construí usando simulaciones Monte Carlo, interés compuesto y valor presente ajustado por inflación, para que la gente pueda ver un rango realista de resultados a largo plazo en vez de un solo número.",
+                desc: "Una app web de proyección de retiro que construí y lancé. Usa simulación Monte Carlo, crecimiento compuesto y valor presente ajustado por inflación para que la gente pueda ver un rango realista de resultados a largo plazo en vez de un solo número.",
                 link: "Ver Calculadora →",
-                tech: ["React", "TypeScript", "GitHub Pages", "Simulación Monte Carlo"]
+                tech: ["React", "GitHub Pages", "Simulación Monte Carlo", "Valor Presente"]
             }
         },
         // Leadership Section
@@ -380,24 +392,24 @@ const translations = {
             ola: {
                 role: "Comité de Pipeline y Programa Rising Leaders",
                 date: "Septiembre 2024 - Presente | Remoto",
-                desc: "Ayudo a correr la voz sobre las carreras actuariales. Fui panelista en la primera competencia nacional de casos para escuela superior de OLA y lideré el alcance a 8,500 consejeros escolares por todo el país sobre Desafiando el Riesgo y las becas de OLA.",
-                skills: ["Alcance Comunitario", "Hablar en Público", "Mentoría"]
+                desc: "Ayudo a correr la voz sobre las carreras actuariales. Organicé una campaña de emails a más de 8,500 consejeros de escuela superior por todo el país sobre Desafiando el Riesgo y las becas de OLA, y fui panelista en la primera competencia de casos Desafiando el Riesgo para escuela superior de OLA.",
+                skills: ["Alcance Comunitario", "Hablar en Público", "Campañas de Email"]
             },
             uas: {
                 role: "VP de Desarrollo de Miembros",
                 date: "Septiembre 2024 - Presente | Storrs, CT",
-                desc: "Lidero un comité de 16 miembros que planifica talleres de integración y preparación profesional para estudiantes de primeros años. Antes de eso dirigí la recaudación de fondos de la sociedad, usando Excel para seguir la participación de los miembros y ver qué era lo que generaba más ganancia, y fui Directora de DEI y organicé el primer evento de DEI de UAS con seis organizaciones de afinidad.",
-                skills: ["Recaudación de Fondos", "Análisis en Excel", "DEI", "Estrategia"]
+                desc: "Desde septiembre de 2026 lidero un comité de 16 miembros dividido en tres equipos: Engagement (nuestro marketing), Peer Learning (hablar en público y talleres) y Resources (materiales educativos para los miembros). También escribo nuestros emails de reclutamiento. Antes fui Directora de Recaudación de Fondos, organizando eventos que apoyaron charlas y programación para los miembros, y Directora de DEI, donde organicé el primer evento de DEI de UAS con seis organizaciones de afinidad.",
+                skills: ["Liderazgo de Equipo", "Marketing", "Recaudación de Fondos", "DEI"]
             },
             vsa: {
                 role: "Co-Directora Financiera (CFO)",
                 date: "Septiembre 2024 - Diciembre 2025 | Storrs, CT",
-                desc: "Puse los precios de 240 unidades o más de mercancía que vendimos a nivel nacional, mirando nuestros costos para llegar a precios que dieran con el punto medio: suficiente para ayudar a financiar la organización y a la vez precios amigables para los estudiantes. Antes fui Co-Coordinadora de Eventos, organizando eventos cada dos semanas para 60 a 70 personas.",
+                desc: "Puse los precios de más de 240 unidades de mercancía vendida a nivel nacional, usando datos de ventas anteriores para ajustar cantidades y precios, y armé presupuestos de cuatro cifras para proyectos como el Año Nuevo Lunar de UConn y el lanzamiento de nuestra mercancía. Antes fui Co-Coordinadora de Eventos, organizando eventos cada dos semanas para 60 a 70 personas.",
                 skills: ["Análisis de Precios", "Presupuestos", "Planificación de Eventos"]
             },
             associations: {
                 label: "También activa en:",
-                items: ["Miembro de ALPFA · Desde 2024", "Programa de Honores de UConn · Desde 2023"]
+                items: ["Miembro de ALPFA · Desde 2024", "Programa de Honores de UConn · Desde 2023", "Becaria Spencer · Beca Brown & Brown · 2026"]
             }
         },
         // Achievements Section
@@ -405,15 +417,15 @@ const translations = {
             title: "Logros e Impacto",
             items: {
                 gpa: "GPA mientras balanceo múltiples roles",
-                internship: "Internados actuariales en MassMutual y Segal",
-                experience: "Años de experiencia profesional",
+                internship: "Líneas de productos en la herramienta de VNB que mejoré en MassMutual",
+                experience: "Consejeros de escuela superior contactados por OLA",
                 languages: "Idiomas que hablo fluido"
             }
         },
         // Contact Section
         contact: {
             title: "¡Vamos a Hablar!",
-            description: "Siempre estoy contenta de hablar sobre ciencias actuariales, datos o cualquier cosa que esté construyendo. No dudes en escribirme.",
+            description: "Siempre estoy contenta de hablar sobre ciencias actuariales, análisis de datos, productos o cualquier cosa que esté construyendo. No dudes en escribirme.",
             labels: {
                 email: "Email",
                 phone: "Teléfono",
