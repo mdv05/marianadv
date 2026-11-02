@@ -83,7 +83,7 @@ const translations = {
                 date: "July 2024",
                 title: "Field School",
                 subtitle: "University of Connecticut, Greece",
-                description: "A summer field school in Greece where I collected and analyzed data on local populations, policies, and historical sites through hands-on research and excavation.",
+                description: "A summer anthropology field school in Greece, where I collected data on the local community and visited excavation sites and major historical monuments.",
                 badges: {
                     field: "Field Research",
                     cultural: "Cultural Studies",
@@ -302,7 +302,7 @@ const translations = {
                 date: "Julio 2024",
                 title: "Programa de Campo",
                 subtitle: "Universidad de Connecticut, Grecia",
-                description: "Una escuela de campo de verano en Grecia donde recopilé y analicé datos sobre las poblaciones locales, las políticas y los sitios históricos a través de investigación y excavación práctica.",
+                description: "Una escuela de campo de antropología en Grecia durante el verano, donde recopilé datos sobre la comunidad local y visité sitios de excavación y monumentos históricos importantes.",
                 badges: {
                     field: "Investigación de Campo",
                     cultural: "Estudios Culturales",
