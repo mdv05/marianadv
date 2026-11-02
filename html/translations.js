@@ -13,7 +13,7 @@ const translations = {
         // Hero Section
         hero: {
             subtitle: "Actuarial Science & Data Analytics",
-            description: "I'm an actuarial science student at UConn who likes working where math, data, and technology meet. I interned at MassMutual on the Product Pricing team this past summer, and I'm looking for full-time roles in actuarial, analytics, and product work starting in June 2027.",
+            description: "I'm an actuarial science student at UConn who likes working where math, data, and technology meet. I interned at MassMutual on the Product Pricing & Assumption Oversight team this past summer, and I'm looking for full-time roles in actuarial, analytics, and product work starting in June 2027.",
             stats: {
                 gpa: "GPA",
                 experience: "Internships",
@@ -105,13 +105,13 @@ const translations = {
                 role: "Actuarial Intern | Retirement Consulting",
                 date: "May 2025 - August 2025 | Farmington, CT",
                 desc: "I ran pension valuation roll-forwards and gain/loss analysis for multiemployer clients, loading and validating plan data and explaining why actual results differed from what was expected. I also assisted credentialed actuaries on annual government filings. Alongside that, I spearheaded our intern group project, setting deadlines and driving the vision, and it won that summer: a retirement dashboard (RetireHub) paired with a generative-AI chatbot (RetireChat).",
-                skills: ["Pension Valuation", "Gain/Loss Analysis", "Data Validation", "Team Leadership", "Python"]
+                skills: ["Pension Valuation", "Gain/Loss Analysis", "Data Validation", "Team Leadership", "Excel"]
             },
             model: {
                 role: "Professional Model",
                 date: "September 2021 - Present | West Hartford, CT",
                 desc: "I model professionally alongside school, working with photographers and agencies on shoots. Balancing it with my coursework and other roles has made me better at managing my time and adjusting quickly in new settings.",
-                skills: ["Project Management", "Communication", "Time Management", "Professionalism"]
+                skills: ["Adaptability", "Communication", "Time Management", "Professionalism"]
             },
             pizza: {
                 role: "Customer Service",
@@ -155,7 +155,7 @@ const translations = {
             },
             earnings: {
                 title: "Earnings Outlook: Creator Income Planning Prototype",
-                desc: "I framed a product gap using Roblox's published creator payout data and built a Python/Streamlit prototype on sample data. It projects a creator's next 90 days of earnings as a Monte Carlo range and uses actuarial credibility weighting so new creators with little history still get a stable estimate, shown as a plain confidence label.",
+                desc: "I framed a product gap using Roblox's published creator payout data, defining the user problem, a retention-based success metric, and a four-feature MVP, then built a Python/Streamlit prototype on sample data. It projects a creator's next 90 days of earnings as a Monte Carlo range and uses actuarial credibility weighting so new creators with little history still get a stable estimate, shown as a plain confidence label.",
                 link: "View Live Prototype →",
                 tech: ["Python", "Streamlit", "Monte Carlo Simulation", "Credibility Weighting"]
             },
@@ -232,7 +232,7 @@ const translations = {
         // Hero Section
         hero: {
             subtitle: "Ciencias Actuariales y Análisis de Datos",
-            description: "Soy estudiante de ciencias actuariales en UConn y me gusta trabajar donde se encuentran las matemáticas, los datos y la tecnología. Este verano hice mi internado en MassMutual en el equipo de Product Pricing, y estoy buscando trabajo a tiempo completo en el área actuarial, de análisis de datos y de productos a partir de junio de 2027.",
+            description: "Soy estudiante de ciencias actuariales en UConn y me gusta trabajar donde se encuentran las matemáticas, los datos y la tecnología. Este verano hice mi internado en MassMutual en el equipo de Product Pricing & Assumption Oversight, y estoy buscando trabajo a tiempo completo en el área actuarial, de análisis de datos y de productos a partir de junio de 2027.",
             stats: {
                 gpa: "Promedio",
                 experience: "Internados",
@@ -324,13 +324,13 @@ const translations = {
                 role: "Internado Actuarial | Consultoría de Retiro",
                 date: "Mayo 2025 - Agosto 2025 | Farmington, CT",
                 desc: "Hice roll-forwards de valuaciones de pensiones y análisis de ganancias y pérdidas para clientes multiempleador, cargando y validando los datos de los planes y explicando por qué los resultados reales fueron diferentes a lo esperado. También apoyé a actuarios acreditados en las radicaciones gubernamentales anuales. Además, encabecé el proyecto de grupo de los internos, poniendo las fechas límite y dirigiendo la visión, y ganó ese verano: un dashboard de retiro (RetireHub) junto a un chatbot de IA generativa (RetireChat).",
-                skills: ["Valuación de Pensiones", "Ganancias y Pérdidas", "Validación de Datos", "Liderazgo de Equipo", "Python"]
+                skills: ["Valuación de Pensiones", "Ganancias y Pérdidas", "Validación de Datos", "Liderazgo de Equipo", "Excel"]
             },
             model: {
                 role: "Modelo Profesional",
                 date: "Septiembre 2021 - Presente | West Hartford, CT",
                 desc: "Modelo profesionalmente junto con la escuela, trabajando con fotógrafos y agencias en sesiones. Balancearlo con mis cursos y mis otros roles me ha hecho mejor manejando mi tiempo y adaptándome rápido a ambientes nuevos.",
-                skills: ["Manejo de Proyectos", "Comunicación", "Manejo del Tiempo", "Profesionalismo"]
+                skills: ["Adaptabilidad", "Comunicación", "Manejo del Tiempo", "Profesionalismo"]
             },
             pizza: {
                 role: "Servicio al Cliente",
@@ -374,7 +374,7 @@ const translations = {
             },
             earnings: {
                 title: "Earnings Outlook: Prototipo de Planificación de Ingresos para Creadores",
-                desc: "Definí una oportunidad de producto usando los datos publicados de pagos a creadores de Roblox y construí un prototipo en Python/Streamlit con datos de muestra. Proyecta las ganancias de un creador para los próximos 90 días como un rango Monte Carlo y usa ponderación de credibilidad actuarial para que los creadores nuevos, con poco historial, igual reciban un estimado estable, mostrado como una etiqueta de confianza sencilla.",
+                desc: "Definí una oportunidad de producto usando los datos publicados de pagos a creadores de Roblox, con el problema del usuario, una métrica de éxito basada en la retención y un MVP de cuatro funciones, y luego construí un prototipo en Python/Streamlit con datos de muestra. Proyecta las ganancias de un creador para los próximos 90 días como un rango Monte Carlo y usa ponderación de credibilidad actuarial para que los creadores nuevos, con poco historial, igual reciban un estimado estable, mostrado como una etiqueta de confianza sencilla.",
                 link: "Ver Prototipo →",
                 tech: ["Python", "Streamlit", "Simulación Monte Carlo", "Ponderación de Credibilidad"]
             },
