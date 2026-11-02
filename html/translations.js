@@ -141,6 +141,7 @@ const translations = {
         projects: {
             label: "Projects",
             title: "Featured Work",
+            wakeNote: "Hosted on Streamlit's free tier. If it has been idle, click the wake-up button and give it about 30 seconds.",
             chatbot: {
                 title: "RetireChat: AI Retirement Chatbot",
                 desc: "A conversational AI tool from our winning Segal intern project, made to help people early in their careers start thinking about retirement. It answers planning questions in plain language through a simple web app.",
@@ -148,7 +149,7 @@ const translations = {
                 tech: ["Python", "Streamlit", "Gemini API", "Gen AI"]
             },
             goldenson: {
-                title: "Goldenson Case Study Competition",
+                title: "Goldenson Case Study Competition, 2024",
                 desc: "For this case competition, I researched lower-income market segments and designed a flexible insurance policy with adjustable contributions and the start of an AI-based underwriting approach. We presented it to industry professionals.",
                 link: "View Details →",
                 tech: ["Market Research", "Insurance Modeling", "AI Underwriting", "Presentation"]
@@ -367,6 +368,7 @@ const translations = {
         projects: {
             label: "Proyectos",
             title: "Trabajo Destacado",
+            wakeNote: "Está en el plan gratuito de Streamlit. Si ha estado inactiva, haz clic en el botón para despertarla y espera unos 30 segundos.",
             chatbot: {
                 title: "RetireChat: Chatbot de Retiro con IA",
                 desc: "Una herramienta de IA conversacional de nuestro proyecto ganador de internos en Segal, hecha para ayudar a la gente que empieza su carrera a pensar en el retiro. Contesta preguntas de planificación en lenguaje sencillo a través de una app web simple.",
@@ -374,7 +376,7 @@ const translations = {
                 tech: ["Python", "Streamlit", "Gemini API", "IA Generativa"]
             },
             goldenson: {
-                title: "Competencia de Caso Goldenson",
+                title: "Competencia de Caso Goldenson, 2024",
                 desc: "Para esta competencia de caso, investigué segmentos de mercado de bajos ingresos y diseñé una póliza de seguros flexible con contribuciones ajustables y el comienzo de un enfoque de suscripción basado en IA. La presentamos a profesionales de la industria.",
                 link: "Mira los Detalles →",
                 tech: ["Investigación de Mercado", "Modelado de Seguros", "Suscripción con IA", "Presentación"]
