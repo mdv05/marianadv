@@ -46,6 +46,9 @@ Single static page, hand-written HTML/CSS with a small inline script. No framewo
 - **Design:** editorial, text-first layout on a warm paper background. Newsreader (serif headings), IBM Plex Sans (body), IBM Plex Mono (small labels/tags). One accent color. Light and dark themes via `prefers-color-scheme`. Deliberately avoids gradients, glassmorphism, icon-card grids, count-up stats, and scroll animations.
 - **Sections (in order):** intro, About, Experience, Projects, Leadership, Education, Skills, Contact. Desktop uses a two-column section grid (label | content); it collapses to one column at 820px.
 - **Projects:** each has a screenshot thumbnail (`shot-*.jpg`, captured from the live apps) linking to the live demo. The Goldenson poster opens in a native `<dialog>`.
+- **Travel map (About):** inline SVG dot map generated from a land mask (one `<path>` of dots plus accent markers). Places list and caption live in `about.travel` in translations.js; update both if a trip is added. Only list places she has confirmed.
+- **Ribbon:** `.ribbon` inside `.shot.has-ribbon` marks the newest project (`projects.latest`). Move both classes when a newer project is added.
+- **Type scale:** body 16px, meta 14px, mono labels 12.5px, serif headings 21px. Keep new elements on this scale.
 - **Script:** language toggle, nav highlighting via IntersectionObserver, and the case-study dialog.
 
 ## Content Management

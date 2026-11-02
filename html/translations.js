@@ -31,6 +31,14 @@ const translations = {
             subtitle: "Actuarial work, data, and the tools I like to build.",
             text1: "I'm a Math and Actuarial Science student at the University of Connecticut, graduating in May 2027. What I enjoy most is finding out why a number changed and explaining it simply, whether it's in a pricing model, a pension valuation, or a tool I built myself.",
             highlight: "At MassMutual, I enhanced the tool that explains why each product's planned profitability changed from one plan to the next, and I traced a product that wasn't flowing through it back to a single lookup formula.",
+            travel: {
+                label: "Places I've Been",
+                home: "Home",
+                lived: "Lived abroad",
+                visited: "Visited",
+                caption: "Home is Connecticut. I spent a semester living in Singapore and have been to 13 countries so far, plus Hong Kong, Puerto Rico, and Hawaii.",
+                places: ["Singapore", "Malaysia", "Indonesia", "Philippines", "Thailand", "Vietnam", "South Korea", "Taiwan", "Hong Kong", "Greece", "Italy", "Spain", "France", "Canada", "Puerto Rico", "Hawaii"]
+            },
             text2: "Before that, I interned at Segal in retirement consulting and spent a semester at the National University of Singapore. Outside of class and work, I model professionally, which has taught me a lot about managing my time and staying calm under pressure.",
             cards: {
                 data: {
@@ -141,6 +149,7 @@ const translations = {
         projects: {
             label: "Projects",
             title: "Featured Work",
+            latest: "Latest Addition",
             wakeNote: "Hosted on Streamlit's free tier. If it has been idle, click the wake-up button and give it about 30 seconds.",
             chatbot: {
                 title: "RetireChat: AI Retirement Chatbot",
@@ -258,6 +267,14 @@ const translations = {
             subtitle: "Trabajo actuarial, datos y las herramientas que me gusta construir.",
             text1: "Soy estudiante de Matemáticas y Ciencias Actuariales en la Universidad de Connecticut y me gradúo en mayo de 2027. Lo que más disfruto es descubrir por qué cambió un número y explicarlo de forma sencilla, ya sea en un modelo de pricing, una valuación de pensiones o una herramienta que construí yo misma.",
             highlight: "En MassMutual mejoré la herramienta que explica por qué cambió la rentabilidad planificada de cada producto de un plan al siguiente, y rastreé un producto que no fluía por ella hasta una sola fórmula de búsqueda.",
+            travel: {
+                label: "Lugares Donde He Estado",
+                home: "Casa",
+                lived: "Viví en el extranjero",
+                visited: "Visitado",
+                caption: "Mi casa es Connecticut. Viví un semestre en Singapur y hasta ahora he estado en 13 países, además de Hong Kong, Puerto Rico y Hawái.",
+                places: ["Singapur", "Malasia", "Indonesia", "Filipinas", "Tailandia", "Vietnam", "Corea del Sur", "Taiwán", "Hong Kong", "Grecia", "Italia", "España", "Francia", "Canadá", "Puerto Rico", "Hawái"]
+            },
             text2: "Antes de eso hice mi internado en Segal en consultoría de retiro y pasé un semestre en la Universidad Nacional de Singapur. Fuera de la escuela y el trabajo, modelo profesionalmente, lo cual me ha enseñado bastante sobre manejar mi tiempo y mantener la calma bajo presión.",
             cards: {
                 data: {
@@ -368,6 +385,7 @@ const translations = {
         projects: {
             label: "Proyectos",
             title: "Trabajo Destacado",
+            latest: "Lo Más Reciente",
             wakeNote: "Está en el plan gratuito de Streamlit. Si ha estado inactiva, haz clic en el botón para despertarla y espera unos 30 segundos.",
             chatbot: {
                 title: "RetireChat: Chatbot de Retiro con IA",
