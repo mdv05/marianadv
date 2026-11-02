@@ -41,52 +41,21 @@ The site automatically deploys via GitHub Actions when changes are pushed to the
 
 ## Architecture
 
-### Single-Page Application Structure
-The entire website is contained in `html/index.html` with:
+Single static page, hand-written HTML/CSS with a small inline script. No frameworks, no build step.
 
-- **Embedded CSS**: All styles are in a `<style>` tag in the HTML head (lines 7-480)
-- **Embedded JavaScript**: All interactivity is in a `<script>` tag at the end of the body (lines 700-784)
-- **Sections**: 
-  - Hero section with animated title
-  - About section with stats grid
-  - Education section with cards
-  - Experience section with timeline layout
-  - Skills section with categorized skill tags
-  - Projects section showcasing key project
-  - Contact section with clickable contact methods
-
-### Key Features
-- **Responsive Design**: Mobile-first approach with CSS Grid and Flexbox
-- **Smooth Animations**: CSS transitions and intersection observer for scroll animations; stat count-up honors `prefers-reduced-motion`
-- **Interactive Elements**: Hover effects, smooth scrolling navigation, scrollspy nav highlighting, reading progress bar, back-to-top button
-- **Professional Styling**: Gradient backgrounds, glassmorphism header, layered card shadows, inline SVG line icons (no emoji icons)
-- **Linked Logos**: Experience cards (MassMutual/Segal/TK) and education cards (UConn/NUS) show official logos wrapped in links to each organization's site
-
-### CSS Organization
-- Global styles and resets (lines 8-20)
-- Header and navigation (lines 28-85)
-- Hero section with animations (lines 86-158)
-- Section layouts and typography (lines 159-187)
-- Component-specific styles for cards, timeline, skills grid (lines 188-409)
-- Animations and responsive design (lines 410-456)
-- Utility classes and interactive elements (lines 457-480)
-
-### JavaScript Functionality
-- Smooth scrolling navigation
-- Intersection observer for fade-in animations
-- Dynamic header background on scroll
-- Typewriter effect for hero title
-- Interactive skill hover effects
-- Contact item click handlers for mailto/tel/web links
+- **Design:** editorial, text-first layout on a warm paper background. Newsreader (serif headings), IBM Plex Sans (body), IBM Plex Mono (small labels/tags). One accent color. Light and dark themes via `prefers-color-scheme`. Deliberately avoids gradients, glassmorphism, icon-card grids, count-up stats, and scroll animations.
+- **Sections (in order):** intro, About, Experience, Projects, Leadership, Education, Skills, Contact. Desktop uses a two-column section grid (label | content); it collapses to one column at 820px.
+- **Projects:** each has a screenshot thumbnail (`shot-*.jpg`, captured from the live apps) linking to the live demo. The Goldenson poster opens in a native `<dialog>`.
+- **Script:** language toggle, nav highlighting via IntersectionObserver, and the case-study dialog.
 
 ## Content Management
 
 Content lives in TWO places that must be kept in sync:
 
-1. **`html/index.html`** — the default (English) markup for every section: hero, about, education, experience, skills, projects, leadership, achievements, contact.
-2. **`html/translations.js`** — the `translations` object with `en` and `es` trees. The inline `updateContent(lang)` function in index.html overwrites section text from this object on page load and on language toggle.
+1. **`html/index.html`**: the default English text, with each translatable element tagged `data-i18n="path.in.translations"`.
+2. **`html/translations.js`**: the `translations` object with `en` and `es` trees.
 
-When editing content, always update the HTML **and** both language trees in translations.js, or the language toggle will show stale text. `updateContent` indexes elements positionally (nav links, timeline entries, experience cards, badges, skill/tech tags), so adding or removing elements requires matching updates to that function and to both translation trees.
+`updateContent(lang)` sets every `[data-i18n]` element's text from the matching path. Arrays (skills, tags) are joined with ` · ` or the element's `data-join` value. Adding content means adding the element with a `data-i18n` key AND the key in both language trees. The English markup must match the `en` tree exactly.
 
 ## Deployment Notes
 

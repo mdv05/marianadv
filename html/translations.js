@@ -129,6 +129,12 @@ const translations = {
                 ai: "AI & Cloud Technologies",
                 actuarial: "Actuarial & Analytics",
                 professional: "Professional Skills"
+            },
+            items: {
+                programming: ["Python", "R", "VBA", "React", "HTML/CSS", "Streamlit"],
+                ai: ["Claude Code", "Gemini API", "Copilot", "GitHub", "Google Cloud"],
+                actuarial: ["Microsoft Excel", "Data Validation", "Data Analysis", "Financial Modeling", "Product Pricing", "Pension Valuation", "Gain/Loss Analysis", "Monte Carlo Simulation", "Credibility Weighting", "Government Filings"],
+                professional: ["Project Management", "Team Leadership", "Public Speaking", "Event Planning", "PowerPoint", "Figma", "Spanish (Fluent)", "English (Native)"]
             }
         },
         // Projects Section
@@ -216,7 +222,8 @@ const translations = {
             connect: "Connect"
         },
         // Footer
-        footer: "All rights reserved"
+        footer: "All rights reserved",
+        ui: { close: "Close", menu: "Sections" }
     },
     es: {
         // Navigation
@@ -348,6 +355,12 @@ const translations = {
                 ai: "IA y Tecnologías Cloud",
                 actuarial: "Actuarial y Análisis",
                 professional: "Destrezas Profesionales"
+            },
+            items: {
+                programming: ["Python", "R", "VBA", "React", "HTML/CSS", "Streamlit"],
+                ai: ["Claude Code", "Gemini API", "Copilot", "GitHub", "Google Cloud"],
+                actuarial: ["Microsoft Excel", "Validación de Datos", "Análisis de Datos", "Modelado Financiero", "Pricing de Productos", "Valuación de Pensiones", "Ganancias y Pérdidas", "Simulación Monte Carlo", "Ponderación de Credibilidad", "Radicaciones Gubernamentales"],
+                professional: ["Manejo de Proyectos", "Liderazgo de Equipo", "Hablar en Público", "Planificación de Eventos", "PowerPoint", "Figma", "Español (fluido)", "Inglés (nativo)"]
             }
         },
         // Projects Section
@@ -435,6 +448,7 @@ const translations = {
             connect: "Conectar"
         },
         // Footer
-        footer: "Todos los derechos reservados"
+        footer: "Todos los derechos reservados",
+        ui: { close: "Cerrar", menu: "Secciones" }
     }
 };
